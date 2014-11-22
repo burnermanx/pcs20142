@@ -12,10 +12,21 @@ package dominio;
 public class Equipe {
     private String nome;
     private Performance performance;
+    private String identificador;
 
+    public Equipe() {
+        
+    }
+    
     public Equipe(String nome) {
         this.nome = nome;
         this.performance = new Performance();
+    }
+    
+    public Equipe(String nome, String identificador) {
+        this.nome = nome;
+        this.performance = new Performance();
+        this.identificador = identificador;
     }
 
     public String getNome() {

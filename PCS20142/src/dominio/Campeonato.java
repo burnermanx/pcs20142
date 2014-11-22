@@ -28,8 +28,19 @@ public class Campeonato {
         equipes.add(equipe);
     }
     
+    public void inserirEquipe(String nome, String identificador) {
+        Equipe equipe = new Equipe(nome, identificador);
+        equipes.add(equipe);
+    }
+    
     public void inserirTurno(int numTurno) {
         Turno turno = new Turno(numTurno);
         turnos.add(turno);
     }
+
+    public int getAno() {
+        return ano;
+    }
+    
+    
 }
