@@ -32,7 +32,8 @@ public class DAOCampeonato {
         try {
             try {
                 reader = new BufferedReader(new FileReader("Equipes.txt"));
-                reader.readLine();
+                String ano = reader.readLine();
+                
                 while (reader.ready()) {
                     String linha = reader.readLine();
                     System.out.println(linha);
