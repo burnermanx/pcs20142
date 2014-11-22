@@ -21,6 +21,7 @@ public class Jogo {
         this.scoreVisitante = scoreVisitante;
         this.equipeMandante = equipeMandante;
         this.equipeVisitante = equipeVisitante;
+        inserirResultado();
     }
 
     public Jogo() {

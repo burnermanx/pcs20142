@@ -24,6 +24,7 @@ public class Rodada {
     
     public void insereJogo(int scrMandante, int scrVisitante, Equipe eqpMandante, Equipe eqpVisitante) {
         Jogo jogo = new Jogo(scrMandante, scrVisitante, eqpMandante, eqpVisitante);
+        jogos.add(jogo);
     }
     
     

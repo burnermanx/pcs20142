@@ -34,6 +34,16 @@ public class Campeonato {
         Turno turno = new Turno(numTurno);
         turnos.add(turno);
     }
+    
+    public boolean verificarTurno(int numTurno) {
+        if (turnos.get(numTurno-1) == null)
+            return false;
+        return true;
+    }
+    
+    public Turno obterTurno(int numTurno) {
+        return turnos.get(numTurno-1);
+    }
 
     public int getAno() {
         return ano;
@@ -41,6 +51,14 @@ public class Campeonato {
 
     public void setAno(int ano) {
         this.ano = ano;
+    }
+    
+    public Equipe buscaEquipe(String nome) {
+        for (Equipe busca : equipes) {
+            if (busca.getNome() == nome)
+                return busca;
+        }
+        return null;
     }
     
 }

@@ -21,10 +21,24 @@ public class Turno {
     public Turno(int numero) {
         this.numero = numero;
     }
+
+    public int getNumero() {
+        return numero;
+    }
+    
     
     public void inserirRodada(int numRodada) {
         Rodada rodada = new Rodada(numRodada);
         rodadas.put(numRodada, rodada);
     }
     
+    public boolean verificarRodada(int numRodada) {
+        if (rodadas.get(numRodada) == null)
+            return false;
+        return true;
+    }
+    
+    public Rodada obterRodada(int numRodada) {
+        return rodadas.get(numRodada);
+    }
 }

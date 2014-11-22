@@ -6,6 +6,10 @@
 package DAO;
 
 import dominio.Campeonato;
+import dominio.Equipe;
+import dominio.Jogo;
+import dominio.Rodada;
+import dominio.Turno;
 import java.beans.*;
 import java.io.*;
 import java.util.*;
@@ -37,10 +41,12 @@ public class DAOCampeonato {
                 while (reader.ready()) {
                     String linha = reader.readLine();
                     System.out.println(linha);
-                    String[] times = linha.split("(");
+                    String[] times = linha.split("[(]");
                     System.out.println("Time: " + times[0]);
                     if (times.length >= 2)
-                        System.out.println("Está na Libertadores");
+                        campeonato.inserirEquipe(times[0], "L");
+                    else
+                        campeonato.inserirEquipe(times[0]);
                 }
             } finally {
                 if (reader != null) {
@@ -54,12 +60,36 @@ public class DAOCampeonato {
     
     public void carregarRodada() {
         BufferedReader reader = null;
+        Rodada rodada = null;
+        Turno turno;
+        Jogo jogo;
+        Equipe mandante;
+        Equipe visitante; 
+        
         try {
             try {
                 reader = new BufferedReader(new FileReader("teste.txt"));
-                String rodada = reader.readLine();
-                String[] numeroRodada = rodada.split(" ");
-                System.out.println("O número da rodada é: " + numeroRodada[1]);
+                String readRodada = reader.readLine();
+                String[] numeroRodada = readRodada.split(" ");
+                int numRodada = Integer.parseInt(numeroRodada[1]);
+                
+                //Inserindo turnos e rodadas
+                if (Integer.getInteger(numeroRodada[1]) < 20) {
+                    if (!campeonato.verificarTurno(1))
+                        campeonato.inserirTurno(1);
+                    turno = campeonato.obterTurno(1);
+                    if (!turno.verificarRodada(numRodada))
+                        turno.inserirRodada(numRodada);
+                    rodada = turno.obterRodada(numRodada);
+                } else if (Integer.getInteger(numeroRodada[1]) >= 20) {
+                    if (!campeonato.verificarTurno(2))
+                        campeonato.inserirTurno(2);
+                    turno = campeonato.obterTurno(2);
+                    if (!turno.verificarRodada(numRodada))
+                        turno.inserirRodada(numRodada);
+                    rodada = turno.obterRodada(numRodada);
+                }
+                
                 while (reader.ready()) {
                     String linha = reader.readLine();
                     System.out.println(linha);
@@ -70,6 +100,13 @@ public class DAOCampeonato {
                     System.out.println("Visitante: " + times[1]);
                     System.out.println("Gols do mandante: " + valores[tamanho - 2]);
                     System.out.println("Gols do visitante: " + valores[tamanho - 1]);
+                    String strMandante = times[0];
+                    String strVisitante = times[1];
+                    int scrMandante = Integer.parseInt(valores[tamanho - 2]);
+                    int scrVisitante = Integer.parseInt(valores[tamanho - 1]);
+                    mandante = campeonato.buscaEquipe(strMandante);
+                    visitante = campeonato.buscaEquipe(strVisitante);
+                    rodada.insereJogo(scrMandante, scrVisitante, mandante, visitante);
                 }
             } finally {
                 if (reader != null) {
