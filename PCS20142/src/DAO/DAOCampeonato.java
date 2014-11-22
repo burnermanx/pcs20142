@@ -14,13 +14,16 @@ import java.util.*;
  * @author Burner
  */
 public class DAOCampeonato {
-    private static final String BASE_DADOS = "CB.xml";
+    private static final String BASE_DADOS = "BRASILEIRO.xml";
     //private Map<String, Conta> contas = new HashMap<String, Conta>(); Estrutura que vamos usar.
 
     public DAOCampeonato() {
         File arquivoXML = new File(BASE_DADOS);
-        if (arquivoXML.exists())
+        if (arquivoXML.exists()){
             lerArquivoXML();
+        } else {
+            carregarEquipes();
+        }
     }
 
 //    public void adicionarConta(Conta conta) {
@@ -31,6 +34,30 @@ public class DAOCampeonato {
 //    public Conta recuperarConta(String numero){
 //        return contas.get(numero);
 //    }
+    
+    public void carregarEquipes(){
+        BufferedReader reader = null;
+        try {
+            try {
+                reader = new BufferedReader(new FileReader("Equipes.txt"));
+                reader.readLine();
+                while (reader.ready()) {
+                    String linha = reader.readLine();
+                    System.out.println(linha);
+                    String[] times = linha.split(" ");
+                    System.out.println("Time: " + times[0]);
+                    if (times.length >= 2)
+                        System.out.println("Está na Libertadores");
+                }
+            } finally {
+                if (reader != null) {
+                    reader.close();
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Erro no acesso." + e.getMessage());
+        }
+    }
     
     public void carregarRodada() {
         BufferedReader reader = null;
@@ -67,8 +94,8 @@ public class DAOCampeonato {
         try {
             try {
                 writer = new XMLEncoder(
-                        new FileOutputStream(BASE_DADOS));
-                //writer.writeObject(contas); Aqui escreveremos a estrutura de dados toda
+                    new FileOutputStream(BASE_DADOS));
+                    //writer.writeObject(contas); Aqui escreveremos a estrutura de dados toda
             } finally {
                 if (writer != null) {
                     writer.close();
@@ -84,8 +111,8 @@ public class DAOCampeonato {
         try {
             try {
                 reader = new XMLDecoder(
-                        new FileInputStream(BASE_DADOS));
-                //contas = (Map<String, Conta>) reader.readObject(); Aqui a estrutura será importada ao iniciar            
+                    new FileInputStream(BASE_DADOS));
+                    //contas = (Map<String, Conta>) reader.readObject(); Aqui a estrutura será importada ao iniciar            
             } finally {
                 if (reader != null) {
                     reader.close();
