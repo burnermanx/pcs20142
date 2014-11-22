@@ -12,7 +12,7 @@ import java.util.*;
  * @author Burner
  */
 public class Campeonato {
-    private int ano = 2014;
+    private int ano;
     private List<Turno> turnos = new ArrayList<Turno>();
     private List<Equipe> equipes = new ArrayList<Equipe>();
     
@@ -38,6 +38,9 @@ public class Campeonato {
     public int getAno() {
         return ano;
     }
-    
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
     
 }
