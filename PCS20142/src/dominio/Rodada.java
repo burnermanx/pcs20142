@@ -26,6 +26,24 @@ public class Rodada {
         Jogo jogo = new Jogo(scrMandante, scrVisitante, eqpMandante, eqpVisitante);
         jogos.add(jogo);
     }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public List<Jogo> getJogos() {
+        return jogos;
+    }
+
+    public void setJogos(List<Jogo> jogos) {
+        this.jogos = jogos;
+    }
+    
+    
     
     
 }

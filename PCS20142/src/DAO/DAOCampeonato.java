@@ -13,6 +13,8 @@ import dominio.Turno;
 import java.beans.*;
 import java.io.*;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -35,19 +37,22 @@ public class DAOCampeonato {
         BufferedReader reader = null;
         try {
             try {
-                reader = new BufferedReader(new FileReader("Equipes.txt"));
-                String ano = reader.readLine();
-                
+                reader = new BufferedReader(new InputStreamReader(new FileInputStream("Equipes.txt"),"Cp1252"));
+                int ano = Integer.parseInt(reader.readLine());
+                campeonato.setAno(ano);
                 while (reader.ready()) {
                     String linha = reader.readLine();
-                    System.out.println(linha);
+                    //System.out.println(linha);
                     String[] times = linha.split("[(]");
-                    System.out.println("Time: " + times[0]);
+                    //System.out.println("Time: " + times[0]);
                     if (times.length >= 2)
                         campeonato.inserirEquipe(times[0], "L");
                     else
                         campeonato.inserirEquipe(times[0]);
                 }
+                
+                carregarRodada();
+                gerarArquivoXML();
             } finally {
                 if (reader != null) {
                     reader.close();
@@ -68,20 +73,20 @@ public class DAOCampeonato {
         
         try {
             try {
-                reader = new BufferedReader(new FileReader("teste.txt"));
+                reader = new BufferedReader(new InputStreamReader(new FileInputStream("Rodada1.txt"),"Cp1252"));
                 String readRodada = reader.readLine();
                 String[] numeroRodada = readRodada.split(" ");
                 int numRodada = Integer.parseInt(numeroRodada[1]);
                 
                 //Inserindo turnos e rodadas
-                if (Integer.getInteger(numeroRodada[1]) < 20) {
+                if (numRodada < 20) {
                     if (!campeonato.verificarTurno(1))
                         campeonato.inserirTurno(1);
                     turno = campeonato.obterTurno(1);
                     if (!turno.verificarRodada(numRodada))
                         turno.inserirRodada(numRodada);
                     rodada = turno.obterRodada(numRodada);
-                } else if (Integer.getInteger(numeroRodada[1]) >= 20) {
+                } else if (numRodada >= 20) {
                     if (!campeonato.verificarTurno(2))
                         campeonato.inserirTurno(2);
                     turno = campeonato.obterTurno(2);
@@ -89,25 +94,26 @@ public class DAOCampeonato {
                         turno.inserirRodada(numRodada);
                     rodada = turno.obterRodada(numRodada);
                 }
-                
+                //Inserindo resultados
                 while (reader.ready()) {
                     String linha = reader.readLine();
                     System.out.println(linha);
-                    String[] times = linha.split("\\s\\d+[X]\\d+\\s");
-                    String[] valores = linha.split("\\D+");
-                    int tamanho = valores.length;
-                    System.out.println("Mandante: " + times[0]);
-                    System.out.println("Visitante: " + times[1]);
-                    System.out.println("Gols do mandante: " + valores[tamanho - 2]);
-                    System.out.println("Gols do visitante: " + valores[tamanho - 1]);
+                    String[] times = linha.split("\\s\\d+[x]\\d+\\s");
+                    Pattern pat = Pattern.compile("(\\d+)[x](\\d+)");
+                    Matcher mat = pat.matcher(linha);
+                    String placar="";
+                    while (mat.find()) 
+                        placar = mat.group();
+                    String[] placarSplit = placar.split("[x]");
                     String strMandante = times[0];
                     String strVisitante = times[1];
-                    int scrMandante = Integer.parseInt(valores[tamanho - 2]);
-                    int scrVisitante = Integer.parseInt(valores[tamanho - 1]);
+                    int scrMandante = Integer.parseInt(placarSplit[0]);
+                    int scrVisitante = Integer.parseInt(placarSplit[1]);
                     mandante = campeonato.buscaEquipe(strMandante);
                     visitante = campeonato.buscaEquipe(strVisitante);
                     rodada.insereJogo(scrMandante, scrVisitante, mandante, visitante);
                 }
+                gerarArquivoXML();
             } finally {
                 if (reader != null) {
                     reader.close();
@@ -125,7 +131,7 @@ public class DAOCampeonato {
             try {
                 writer = new XMLEncoder(
                     new FileOutputStream(BASE_DADOS));
-                    //writer.writeObject(contas); Aqui escreveremos a estrutura de dados toda
+                    writer.writeObject(this.campeonato); //Aqui escreveremos a estrutura de dados toda
             } finally {
                 if (writer != null) {
                     writer.close();
@@ -142,7 +148,7 @@ public class DAOCampeonato {
             try {
                 reader = new XMLDecoder(
                     new FileInputStream(BASE_DADOS));
-                    //contas = (Map<String, Conta>) reader.readObject(); Aqui a estrutura será importada ao iniciar            
+                    campeonato = (Campeonato) reader.readObject(); //Aqui a estrutura será importada ao iniciar            
             } finally {
                 if (reader != null) {
                     reader.close();

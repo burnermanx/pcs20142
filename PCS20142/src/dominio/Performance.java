@@ -26,11 +26,13 @@ public class Performance {
     }
     
     public void calculaPG() {
-        this.pg = (v*3) + (e*1);
+        this.pg = (this.v*3) + (this.e*1);
     }
     
     public void calculaAproveitamento() {
-        this.aproveitamento = (pg / j * 3);
+        double pg = (double)this.pg;
+        double j = (double)this.j;
+        this.aproveitamento = ((pg / (j * 3))*100);
     }
     
     public void adicionaGolsPros(int gols) {
@@ -66,8 +68,80 @@ public class Performance {
         adicionaGolsPros(gp);
         adicionaGolsContras(gc);
         calculaSaldoGols();
-        calculaAproveitamento();
         calculaPG();
+        calculaAproveitamento();
+    }
+
+    public int getPg() {
+        return pg;
+    }
+
+    public void setPg(int pg) {
+        this.pg = pg;
+    }
+
+    public int getJ() {
+        return j;
+    }
+
+    public void setJ(int j) {
+        this.j = j;
+    }
+
+    public int getV() {
+        return v;
+    }
+
+    public void setV(int v) {
+        this.v = v;
+    }
+
+    public int getE() {
+        return e;
+    }
+
+    public void setE(int e) {
+        this.e = e;
+    }
+
+    public int getD() {
+        return d;
+    }
+
+    public void setD(int d) {
+        this.d = d;
+    }
+
+    public int getGp() {
+        return gp;
+    }
+
+    public void setGp(int gp) {
+        this.gp = gp;
+    }
+
+    public int getGc() {
+        return gc;
+    }
+
+    public void setGc(int gc) {
+        this.gc = gc;
+    }
+
+    public int getSg() {
+        return sg;
+    }
+
+    public void setSg(int sg) {
+        this.sg = sg;
+    }
+
+    public double getAproveitamento() {
+        return aproveitamento;
+    }
+
+    public void setAproveitamento(double aproveitamento) {
+        this.aproveitamento = aproveitamento;
     }
     
     

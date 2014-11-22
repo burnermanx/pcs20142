@@ -41,4 +41,14 @@ public class Turno {
     public Rodada obterRodada(int numRodada) {
         return rodadas.get(numRodada);
     }
+
+    public Map<Integer, Rodada> getRodadas() {
+        return rodadas;
+    }
+
+    public void setRodadas(Map<Integer, Rodada> rodadas) {
+        this.rodadas = rodadas;
+    }
+    
+    
 }

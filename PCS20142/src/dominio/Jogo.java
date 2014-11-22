@@ -28,6 +28,40 @@ public class Jogo {
 
     }
 
+    public int getScoreMandante() {
+        return scoreMandante;
+    }
+
+    public void setScoreMandante(int scoreMandante) {
+        this.scoreMandante = scoreMandante;
+    }
+
+    public int getScoreVisitante() {
+        return scoreVisitante;
+    }
+
+    public void setScoreVisitante(int scoreVisitante) {
+        this.scoreVisitante = scoreVisitante;
+    }
+
+    public Equipe getEquipeMandante() {
+        return equipeMandante;
+    }
+
+    public void setEquipeMandante(Equipe equipeMandante) {
+        this.equipeMandante = equipeMandante;
+    }
+
+    public Equipe getEquipeVisitante() {
+        return equipeVisitante;
+    }
+
+    public void setEquipeVisitante(Equipe equipeVisitante) {
+        this.equipeVisitante = equipeVisitante;
+    }
+    
+    
+
     public void inserirResultado() {
         if (scoreMandante > scoreVisitante) {
             equipeMandante.inserirResultado("v", scoreMandante, scoreVisitante);

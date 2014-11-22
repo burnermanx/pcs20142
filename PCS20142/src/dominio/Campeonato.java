@@ -36,9 +36,9 @@ public class Campeonato {
     }
     
     public boolean verificarTurno(int numTurno) {
-        if (turnos.get(numTurno-1) == null)
-            return false;
-        return true;
+        if (turnos.size() >= numTurno)
+            return true;
+        return false;
     }
     
     public Turno obterTurno(int numTurno) {
@@ -52,10 +52,28 @@ public class Campeonato {
     public void setAno(int ano) {
         this.ano = ano;
     }
+
+    public List<Turno> getTurnos() {
+        return turnos;
+    }
+
+    public void setTurnos(List<Turno> turnos) {
+        this.turnos = turnos;
+    }
+
+    public List<Equipe> getEquipes() {
+        return equipes;
+    }
+
+    public void setEquipes(List<Equipe> equipes) {
+        this.equipes = equipes;
+    }
+    
+    
     
     public Equipe buscaEquipe(String nome) {
         for (Equipe busca : equipes) {
-            if (busca.getNome() == nome)
+            if (nome.equals(busca.getNome()))
                 return busca;
         }
         return null;

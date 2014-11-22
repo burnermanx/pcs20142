@@ -32,9 +32,32 @@ public class Equipe {
     public String getNome() {
         return nome;
     }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+    
     
     public void inserirResultado(String resultado, int gp, int gc) {
         performance.adicionaJogo(resultado, gp, gc);
     }
+
+    public Performance getPerformance() {
+        return performance;
+    }
+
+    public void setPerformance(Performance performance) {
+        this.performance = performance;
+    }
+
+    public String getIdentificador() {
+        return identificador;
+    }
+
+    public void setIdentificador(String identificador) {
+        this.identificador = identificador;
+    }
+    
+    
     
 }
