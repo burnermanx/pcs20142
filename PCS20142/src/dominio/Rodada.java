@@ -5,10 +5,28 @@
  */
 package dominio;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Burner
  */
 public class Rodada {
     private int numero;
+    private List<Jogo> jogos = new ArrayList<Jogo>();
+
+    public Rodada() {
+        
+    }
+    
+    public Rodada(int numRodada) {
+        this.numero = numRodada;
+    }
+    
+    public void insereJogo(int scrMandante, int scrVisitante, Equipe eqpMandante, Equipe eqpVisitante) {
+        Jogo jogo = new Jogo(scrMandante, scrVisitante, eqpMandante, eqpVisitante);
+    }
+    
+    
 }

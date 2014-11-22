@@ -9,8 +9,8 @@ package servicos;
  *
  * @author Burner
  */
-public class ServicoImportacaoResultados {
+public class ServicoImportacaoResultados extends ServicoImportacaoDados {
     public void importarResultados(String nomeArquivo) {
-        
+        //Colocar o código de importaçao de resultados aqui
     }
 }

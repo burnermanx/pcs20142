@@ -10,6 +10,34 @@ package dominio;
  * @author Burner
  */
 public class Jogo {
+
     private int scoreMandante;
     private int scoreVisitante;
+    private Equipe equipeMandante;
+    private Equipe equipeVisitante;
+
+    public Jogo(int scoreMandante, int scoreVisitante, Equipe equipeMandante, Equipe equipeVisitante) {
+        this.scoreMandante = scoreMandante;
+        this.scoreVisitante = scoreVisitante;
+        this.equipeMandante = equipeMandante;
+        this.equipeVisitante = equipeVisitante;
+    }
+
+    public Jogo() {
+
+    }
+
+    public void inserirResultado() {
+        if (scoreMandante > scoreVisitante) {
+            equipeMandante.inserirResultado("v", scoreMandante, scoreVisitante);
+            equipeVisitante.inserirResultado("d", scoreVisitante, scoreMandante);
+        } else if (scoreMandante == scoreVisitante) {
+            equipeMandante.inserirResultado("e", scoreMandante, scoreVisitante);
+            equipeVisitante.inserirResultado("e", scoreVisitante, scoreMandante);
+        } else if (scoreVisitante > scoreMandante) {
+            equipeMandante.inserirResultado("d", scoreMandante, scoreVisitante);
+            equipeVisitante.inserirResultado("v", scoreVisitante, scoreMandante);
+        }
+    }
+
 }

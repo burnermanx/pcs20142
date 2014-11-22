@@ -10,5 +10,20 @@ package dominio;
  * @author Burner
  */
 public class Equipe {
-    private int nome;
+    private String nome;
+    private Performance performance;
+
+    public Equipe(String nome) {
+        this.nome = nome;
+        this.performance = new Performance();
+    }
+
+    public String getNome() {
+        return nome;
+    }
+    
+    public void inserirResultado(String resultado, int gp, int gc) {
+        performance.adicionaJogo(resultado, gp, gc);
+    }
+    
 }

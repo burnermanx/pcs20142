@@ -9,6 +9,6 @@ package servicos;
  *
  * @author Burner
  */
-public class ServicoImportacaoDados {
+abstract class ServicoImportacaoDados {
     
 }

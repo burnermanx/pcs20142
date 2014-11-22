@@ -9,8 +9,9 @@ package servicos;
  *
  * @author Burner
  */
-public class ServicoImportacaoEquipes {
+public class ServicoImportacaoEquipes extends ServicoImportacaoDados {
     public void importarEquipes(String nomeArquivo) {
         
     }
+    
 }
