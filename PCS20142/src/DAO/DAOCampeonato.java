@@ -5,6 +5,7 @@
  */
 package DAO;
 
+import dominio.Campeonato;
 import java.beans.*;
 import java.io.*;
 import java.util.*;
@@ -15,7 +16,7 @@ import java.util.*;
  */
 public class DAOCampeonato {
     private static final String BASE_DADOS = "BRASILEIRO.xml";
-    //private Map<String, Conta> contas = new HashMap<String, Conta>(); Estrutura que vamos usar.
+    private Campeonato campeonato = new Campeonato();
 
     public DAOCampeonato() {
         File arquivoXML = new File(BASE_DADOS);
@@ -25,17 +26,8 @@ public class DAOCampeonato {
             carregarEquipes();
         }
     }
-
-//    public void adicionarConta(Conta conta) {
-//        contas.put(conta.getNumero(), conta);
-//        gerarArquivoXML();
-//    }
-//    
-//    public Conta recuperarConta(String numero){
-//        return contas.get(numero);
-//    }
     
-    public void carregarEquipes(){
+    private void carregarEquipes(){
         BufferedReader reader = null;
         try {
             try {
@@ -44,7 +36,7 @@ public class DAOCampeonato {
                 while (reader.ready()) {
                     String linha = reader.readLine();
                     System.out.println(linha);
-                    String[] times = linha.split(" ");
+                    String[] times = linha.split("(");
                     System.out.println("Time: " + times[0]);
                     if (times.length >= 2)
                         System.out.println("Está na Libertadores");
