@@ -5,10 +5,94 @@
  */
 package DAO;
 
+import java.beans.*;
+import java.io.*;
+import java.util.*;
+
 /**
  *
  * @author Burner
  */
 public class DAOCampeonato {
+    private static final String BASE_DADOS = "CB.xml";
+    //private Map<String, Conta> contas = new HashMap<String, Conta>(); Estrutura que vamos usar.
+
+    public DAOCampeonato() {
+        File arquivoXML = new File(BASE_DADOS);
+        if (arquivoXML.exists())
+            lerArquivoXML();
+    }
+
+//    public void adicionarConta(Conta conta) {
+//        contas.put(conta.getNumero(), conta);
+//        gerarArquivoXML();
+//    }
+//    
+//    public Conta recuperarConta(String numero){
+//        return contas.get(numero);
+//    }
     
+    public void carregarRodada() {
+        BufferedReader reader = null;
+        try {
+            try {
+                reader = new BufferedReader(new FileReader("teste.txt"));
+                String rodada = reader.readLine();
+                String[] numeroRodada = rodada.split(" ");
+                System.out.println("O número da rodada é: " + numeroRodada[1]);
+                while (reader.ready()) {
+                    String linha = reader.readLine();
+                    System.out.println(linha);
+                    String[] times = linha.split("\\s\\d+[X]\\d+\\s");
+                    String[] valores = linha.split("\\D+");
+                    int tamanho = valores.length;
+                    System.out.println("Mandante: " + times[0]);
+                    System.out.println("Visitante: " + times[1]);
+                    System.out.println("Gols do mandante: " + valores[tamanho - 2]);
+                    System.out.println("Gols do visitante: " + valores[tamanho - 1]);
+                }
+            } finally {
+                if (reader != null) {
+                    reader.close();
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Erro no acesso." + e.getMessage());
+        }
+    }
+    
+
+    private void gerarArquivoXML() {
+        XMLEncoder writer = null;
+        try {
+            try {
+                writer = new XMLEncoder(
+                        new FileOutputStream(BASE_DADOS));
+                //writer.writeObject(contas); Aqui escreveremos a estrutura de dados toda
+            } finally {
+                if (writer != null) {
+                    writer.close();
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Erro no acesso ao arquivo." + e.getMessage());
+        }
+    }
+
+    private void lerArquivoXML() {
+        XMLDecoder reader = null;
+        try {
+            try {
+                reader = new XMLDecoder(
+                        new FileInputStream(BASE_DADOS));
+                //contas = (Map<String, Conta>) reader.readObject(); Aqui a estrutura será importada ao iniciar            
+            } finally {
+                if (reader != null) {
+                    reader.close();
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Erro no acesso ao arquivo." + e.getMessage());
+        }
+    }   
 }
