@@ -8,11 +8,7 @@ package servicos;
 import dominio.Campeonato;
 import dominio.Equipe;
 import dominio.Performance;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  *
@@ -41,9 +37,11 @@ public class ServicoClassificacaoEquipes {
     public List<String[]> obterClassificacaoGeral() {
         List<String[]> classificacaoGeral = new ArrayList<String[]>();
         List<Equipe> equipes;
+        int i = 1;
         equipes = campeonato.getEquipes();
         for (Equipe equipe : equipes) {
             Performance performanceEquipe = equipe.getPerformance();
+            this.posicao = Integer.toString(i);
             this.nomeEquipe = equipe.getNome();
             this.j = String.valueOf(performanceEquipe.getJ());
             this.pg = String.valueOf(performanceEquipe.getPg());
@@ -56,8 +54,9 @@ public class ServicoClassificacaoEquipes {
             this.aproveitamento = String.valueOf(performanceEquipe.getAproveitamento());
             if (equipe.getIdentificador() != null)
                 this.indicador = String.valueOf(equipe.getIdentificador());
-            String[] linha = { "1", indicador, nomeEquipe, pg, j, v, d, gp, gc, sg, aproveitamento };
+            String[] linha = { posicao, indicador, nomeEquipe, pg, j, v, d, gp, gc, sg, aproveitamento };
             classificacaoGeral.add(linha);
+            i = i + 1;
         }
             return classificacaoGeral;
     }
