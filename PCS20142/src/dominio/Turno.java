@@ -33,12 +33,14 @@ public class Turno {
     }
     
     public boolean verificarRodada(int numRodada) {
-        if (rodadas.get(numRodada) == null)
+        if (rodadas.get(numRodada).equals(null))
             return false;
         return true;
     }
     
     public Rodada obterRodada(int numRodada) {
+        if (rodadas.get(numRodada) == null)
+            inserirRodada(numRodada);
         return rodadas.get(numRodada);
     }
 

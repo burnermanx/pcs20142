@@ -23,8 +23,23 @@ public class Rodada {
     }
     
     public void insereJogo(int scrMandante, int scrVisitante, Equipe eqpMandante, Equipe eqpVisitante) {
-        Jogo jogo = new Jogo(scrMandante, scrVisitante, eqpMandante, eqpVisitante);
-        jogos.add(jogo);
+        Jogo jogo;
+        jogo = buscaJogo(eqpMandante, eqpVisitante);
+        if (jogo == null) {
+            jogo = new Jogo(scrMandante, scrVisitante, eqpMandante, eqpVisitante);
+            jogos.add(jogo);
+        } else {
+            jogo.setScoreMandante(scrMandante);
+            jogo.setScoreVisitante(scrVisitante);
+        }
+    }
+    
+    public Jogo buscaJogo(Equipe eqpMandante, Equipe eqpVisitante) {
+        for (Jogo jogo : jogos) {
+            if (jogo.getEquipeMandante().equals(eqpMandante) && jogo.getEquipeVisitante().equals(eqpVisitante))
+                return jogo;
+        }
+        return null;
     }
 
     public int getNumero() {

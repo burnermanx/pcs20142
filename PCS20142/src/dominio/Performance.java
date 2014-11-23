@@ -21,6 +21,10 @@ public class Performance {
     private double aproveitamento;
 
     public Performance() {
+        apagaPerformance();
+    }
+    
+    public void apagaPerformance() {
         pg = j = v = e = d = gp = gc = sg = 0;
         aproveitamento = 0;
     }

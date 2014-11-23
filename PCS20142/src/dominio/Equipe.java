@@ -41,6 +41,10 @@ public class Equipe {
     public void inserirResultado(String resultado, int gp, int gc) {
         performance.adicionaJogo(resultado, gp, gc);
     }
+    
+    public void apagaPerformance() {
+        performance.apagaPerformance();
+    }
 
     public Performance getPerformance() {
         return performance;
@@ -57,7 +61,6 @@ public class Equipe {
     public void setIdentificador(String identificador) {
         this.identificador = identificador;
     }
-    
     
     
 }

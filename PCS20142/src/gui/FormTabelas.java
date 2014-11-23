@@ -30,6 +30,7 @@ public class FormTabelas extends javax.swing.JFrame {
             importacaoEquipes.importarEquipes("Equipes.txt"); //Trocar depois para dialog de inserção do arquivo Equipes
         ServicoImportacaoResultados importacaoResultados = new ServicoImportacaoResultados(daoCampeonato);
         importacaoResultados.importarResultados("Rodada1.txt");
+        importacaoResultados.importarResultados("Rodada2.txt");
     }
 
     

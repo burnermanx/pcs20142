@@ -51,18 +51,14 @@ public class ServicoImportacaoResultados extends ServicoImportacaoDados {
                     if (!campeonato.verificarTurno(1))
                         campeonato.inserirTurno(1);
                     turno = campeonato.obterTurno(1);
-                    if (!turno.verificarRodada(numRodada))
-                        turno.inserirRodada(numRodada);
                     rodada = turno.obterRodada(numRodada);
                 } else if (numRodada >= 20) {
                     if (!campeonato.verificarTurno(2))
                         campeonato.inserirTurno(2);
                     turno = campeonato.obterTurno(2);
-                    if (!turno.verificarRodada(numRodada))
-                        turno.inserirRodada(numRodada);
                     rodada = turno.obterRodada(numRodada);
                 }
-                //Inserindo resultados
+                //Inserindo resultado
                 while (reader.ready()) {
                     String linha = reader.readLine();
                     System.out.println(linha);
@@ -79,8 +75,11 @@ public class ServicoImportacaoResultados extends ServicoImportacaoDados {
                     int scrVisitante = Integer.parseInt(placarSplit[1]);
                     mandante = campeonato.buscaEquipe(strMandante);
                     visitante = campeonato.buscaEquipe(strVisitante);
+                    mandante.apagaPerformance();
+                    visitante.apagaPerformance();
                     rodada.insereJogo(scrMandante, scrVisitante, mandante, visitante);
                 }
+                campeonato.recalcularPerfomance();
                 daoCampeonato.salvarAlteracoes();
             } finally {
                 if (reader != null) {
