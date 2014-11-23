@@ -16,9 +16,6 @@ import servicos.ServicoImportacaoResultados;
  * @author Luiz Paulo
  */
 public class FormTabelas extends javax.swing.JFrame {
-    
-    
-    
 
     /**
      * Creates new form Tabelas
@@ -27,14 +24,14 @@ public class FormTabelas extends javax.swing.JFrame {
         initComponents();
         DAOCampeonato daoCampeonato = new DAOCampeonato();
         ServicoImportacaoEquipes importacaoEquipes = new ServicoImportacaoEquipes(daoCampeonato);
-        if (!daoCampeonato.fileExists()) 
+        if (!daoCampeonato.fileExists()) {
             importacaoEquipes.importarEquipes("Equipes.txt"); //Trocar depois para dialog de inserção do arquivo Equipes
+        }
         ServicoImportacaoResultados importacaoResultados = new ServicoImportacaoResultados(daoCampeonato);
         importacaoResultados.importarResultados("Rodada1.txt");
         importacaoResultados.importarResultados("Rodada2.txt");
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -204,15 +201,23 @@ public class FormTabelas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoImportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoImportarActionPerformed
-    
-    String aviso = jLabel3.getText();
-    String entradaRodada = textoRodadas.getText();
-    
 
-        
-        
-        
-        
+        //código de entrada
+//        int posicao = posicao;
+//        char indicador = pegar indicador;
+//        String equipes = pegar nome das equipes;
+//        int PG = pegar pontuacao da equipe;
+//        int J = pegar quantidade de jogos que ja jogou;
+//        int V = pegar quantidade de vitórias;
+//        int D = pegar quantidade de derrotas;
+//        int GM = pegar gols marcados;
+//        int GS = pegar gols sofridos;
+//        int SD = pegar saldo de gols;
+//        double aproveitamento = pegar aproveitamento;
+//        Object[] tabela = { posicao, indicador, equipes, PG, J, V, D, GM, GS, SD, aproveitamento };
+//        ((DefaultTableModel) this.tabelaGeral.getModel()).addRow(tabela);
+
+
     }//GEN-LAST:event_botaoImportarActionPerformed
 
     /**
