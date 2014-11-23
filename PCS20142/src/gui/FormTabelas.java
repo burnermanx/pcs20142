@@ -124,17 +124,18 @@ public class FormTabelas extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Posição", "Indicador", "Equipe", "PG", "J", "V", "D", "GM", "GS", "SG", "%"
+                "Posição", "Indicador", "Equipe", "PG", "J", "V", "E", "D", "GP", "GC", "SG", "%"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        tabelaGeral.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(tabelaGeral);
         if (tabelaGeral.getColumnModel().getColumnCount() > 0) {
             tabelaGeral.getColumnModel().getColumn(0).setResizable(false);
@@ -148,6 +149,7 @@ public class FormTabelas extends javax.swing.JFrame {
             tabelaGeral.getColumnModel().getColumn(8).setResizable(false);
             tabelaGeral.getColumnModel().getColumn(9).setResizable(false);
             tabelaGeral.getColumnModel().getColumn(10).setResizable(false);
+            tabelaGeral.getColumnModel().getColumn(11).setResizable(false);
         }
 
         jTabbedPane1.addTab("Classificação geral", jScrollPane3);

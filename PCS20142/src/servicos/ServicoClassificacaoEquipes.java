@@ -54,7 +54,7 @@ public class ServicoClassificacaoEquipes {
             this.aproveitamento = String.valueOf(String.format("%.1f", performanceEquipe.getAproveitamento()));
             if (equipe.getIdentificador() != null)
                 this.indicador = String.valueOf(equipe.getIdentificador());
-            String[] linha = { posicao, indicador, nomeEquipe, pg, j, v, d, gp, gc, sg, aproveitamento };
+            String[] linha = { posicao, indicador, nomeEquipe, pg, j, v, e, d, gp, gc, sg, aproveitamento };
             classificacaoGeral.add(linha);
             i = i + 1;
         }
