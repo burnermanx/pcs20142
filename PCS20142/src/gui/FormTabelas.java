@@ -105,10 +105,7 @@ public class FormTabelas extends javax.swing.JFrame {
 
         tabelaGeral.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Posição", "Indicador", "Equipe", "PG", "J", "V", "D", "GM", "GS", "SG", "%"
