@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.7.0_51" class="java.beans.XMLDecoder">
- <object class="dominio.Campeonato">
+<java version="1.8.0_20" class="java.beans.XMLDecoder">
+ <object class="dominio.Campeonato" id="Campeonato0">
   <void property="ano">
    <int>2014</int>
   </void>
@@ -648,11 +648,11 @@
   </void>
   <void property="turnos">
    <void method="add">
-    <object class="dominio.Turno">
+    <object class="dominio.Turno" id="Turno0">
      <void property="rodadas">
       <void method="put">
        <int>1</int>
-       <object class="dominio.Rodada">
+       <object class="dominio.Rodada" id="Rodada0">
         <void property="jogos">
          <void method="add">
           <object class="dominio.Jogo">
@@ -792,7 +792,7 @@
       </void>
       <void method="put">
        <int>2</int>
-       <object class="dominio.Rodada">
+       <object class="dominio.Rodada" id="Rodada1">
         <void property="jogos">
          <void method="add">
           <object class="dominio.Jogo">
