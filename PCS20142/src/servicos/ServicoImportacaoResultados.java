@@ -28,16 +28,6 @@ public class ServicoImportacaoResultados extends ServicoImportacaoDados {
         campeonato = daoCampeonato.getCampeonato();
     }
 
-    public static String verificarRodadas(String entradaRodada, String aviso) {
-        String[] entradaRodadas = {"rodada1.txt", "rodada2.txt", "rodada3.txt", "rodada4.txt", "rodada5.txt",
-            "rodada6.txt", "rodada7.txt", "rodada8.txt", "rodada9.txt", "rodada10.txt", "rodada11.txt", "rodada12.txt", "rodada13.txt", "rodada14.txt", "rodada15.txt", "rodada16.txt", "rodada17.txt", "rodada18.txt", "rodada19.txt", "rodada20.txt", "rodada21.txt", "rodada22.txt", "rodada23.txt", "rodada24.txt", "rodada25.txt", "rodada26.txt", "rodada27.txt", "rodada28.txt", "rodada29.txt", "rodada30.txt", "rodada31.txt", "rodada32.txt", "rodada33.txt", "rodada34.txt", "rodada35.txt", "rodada36.txt", "rodada37.txt", "rodada38.txt"};
-        for (int i = 0; i < 0; i++) {
-            if (entradaRodada.equals(entradaRodadas[i]) != true) {
-                aviso = "Arquivo incorreto.";
-            }
-        }
-        return aviso;
-    }
 
     public void importarResultados(String file) {
         BufferedReader reader = null;

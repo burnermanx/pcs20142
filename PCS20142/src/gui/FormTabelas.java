@@ -207,8 +207,6 @@ public class FormTabelas extends javax.swing.JFrame {
     
     String aviso = jLabel3.getText();
     String entradaRodada = textoRodadas.getText();
-    ServicoImportacaoResultados.verificarRodadas(entradaRodada, aviso);
-    jLabel3.setText(aviso);
     
 
         
