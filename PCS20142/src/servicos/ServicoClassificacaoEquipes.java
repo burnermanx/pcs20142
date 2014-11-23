@@ -35,7 +35,7 @@ public class ServicoClassificacaoEquipes {
     }
     
     public List<String[]> obterClassificacaoGeral() {
-        List<String[]> classificacaoGeral = new ArrayList<String[]>();
+        List<String[]> classificacaoGeral = new ArrayList<>();
         List<Equipe> equipes;
         int i = 1;
         equipes = campeonato.getEquipes();
