@@ -6,6 +6,7 @@
 package gui;
 
 import DAO.DAOCampeonato;
+import java.io.*;
 import javax.swing.table.DefaultTableModel;
 import servicos.ServicoImportacaoEquipes;
 import servicos.ServicoImportacaoResultados;
@@ -15,7 +16,8 @@ import servicos.ServicoImportacaoResultados;
  * @author Luiz Paulo
  */
 public class FormTabelas extends javax.swing.JFrame {
-
+    String[] entradaRodadas = { "rodada1.txt", "rodada2.txt", "rodada3.txt", "rodada4.txt", "rodada5.txt", 
+"rodada6.txt", "rodada7.txt", "rodada8.txt", "rodada9.txt", "rodada10.txt", "rodada11.txt", "rodada12.txt", "rodada13.txt", "rodada14.txt", "rodada15.txt", "rodada16.txt", "rodada17.txt", "rodada18.txt", "rodada19.txt", "rodada20.txt", "rodada21.txt", "rodada22.txt", "rodada23.txt", "rodada24.txt", "rodada25.txt", "rodada26.txt", "rodada27.txt", "rodada28.txt", "rodada29.txt", "rodada30.txt", "rodada31.txt", "rodada32.txt", "rodada33.txt", "rodada34.txt", "rodada35.txt", "rodada36.txt", "rodada37.txt", "rodada38.txt" }; 
     
     
 
@@ -53,7 +55,8 @@ public class FormTabelas extends javax.swing.JFrame {
         tabelaRodadas = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         comboRodada = new javax.swing.JComboBox();
-        jTextField1 = new javax.swing.JTextField();
+        textoRodadas = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -149,36 +152,42 @@ public class FormTabelas extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 892, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 892, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(botaoImportar)
+                                .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel2))
-                            .addComponent(jTextField1))
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(comboRodada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(textoRodadas, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(comboRodada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(botaoImportar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botaoImportar)
-                            .addComponent(jLabel2)
-                            .addComponent(comboRodada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(comboRodada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textoRodadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoImportar)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -196,7 +205,17 @@ public class FormTabelas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoImportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoImportarActionPerformed
-        // TODO add your handling code here:
+    String entradaRodada;
+    entradaRodada = textoRodadas.getText();
+    for (int i = 0; i < 0; i++){
+        if (entradaRodada.equals(entradaRodadas[i]) != true){
+            jLabel3.setText("Arquivo incorreto.");
+        }
+    }
+        
+        
+        
+        
     }//GEN-LAST:event_botaoImportarActionPerformed
 
     /**
@@ -242,12 +261,13 @@ public class FormTabelas extends javax.swing.JFrame {
     private javax.swing.JComboBox comboRodada;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTable tabelaGeral;
     private javax.swing.JTable tabelaRodadas;
+    private javax.swing.JTextField textoRodadas;
     // End of variables declaration//GEN-END:variables
 }
