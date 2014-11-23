@@ -11,10 +11,7 @@ import dominio.Equipe;
 import dominio.Jogo;
 import dominio.Rodada;
 import dominio.Turno;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
