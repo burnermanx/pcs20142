@@ -7,7 +7,9 @@ package gui;
 
 import DAO.DAOCampeonato;
 import java.io.*;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import servicos.ServicoClassificacaoEquipes;
 import servicos.ServicoImportacaoEquipes;
 import servicos.ServicoImportacaoResultados;
 
@@ -22,7 +24,9 @@ public class FormTabelas extends javax.swing.JFrame {
      */
     public FormTabelas() {
         initComponents();
+        List<String[]> classificacao;
         DAOCampeonato daoCampeonato = new DAOCampeonato();
+        ServicoClassificacaoEquipes servicoClassificacao = new ServicoClassificacaoEquipes(daoCampeonato.getCampeonato());
         ServicoImportacaoEquipes importacaoEquipes = new ServicoImportacaoEquipes(daoCampeonato);
         if (!daoCampeonato.fileExists()) {
             importacaoEquipes.importarEquipes("Equipes.txt"); //Trocar depois para dialog de inserção do arquivo Equipes
@@ -30,6 +34,11 @@ public class FormTabelas extends javax.swing.JFrame {
         ServicoImportacaoResultados importacaoResultados = new ServicoImportacaoResultados(daoCampeonato);
         importacaoResultados.importarResultados("Rodada1.txt");
         importacaoResultados.importarResultados("Rodada2.txt");
+        
+        classificacao = servicoClassificacao.obterClassificacaoGeral();
+        for (String[] linha : classificacao) {
+            ((DefaultTableModel) this.tabelaGeral.getModel()).addRow(linha);
+        }
     }
 
     /**
