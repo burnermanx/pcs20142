@@ -29,7 +29,7 @@ public class ServicoImportacaoResultados extends ServicoImportacaoDados {
     }
 
 
-    public void importarResultados(String file) {
+    public void importarResultados(File file) throws FileNotFoundException {
         BufferedReader reader = null;
         Rodada rodada = null;
         Turno turno;

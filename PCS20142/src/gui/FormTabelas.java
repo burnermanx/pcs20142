@@ -8,6 +8,9 @@ package gui;
 import DAO.DAOCampeonato;
 import java.io.*;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
 import servicos.ServicoClassificacaoEquipes;
 import servicos.ServicoImportacaoEquipes;
@@ -19,26 +22,39 @@ import servicos.ServicoImportacaoResultados;
  */
 public class FormTabelas extends javax.swing.JFrame {
     //private Curso curso = new LeitorXML().lerXML();
+    DAOCampeonato daoCampeonato = new DAOCampeonato();
+    ServicoClassificacaoEquipes servicoClassificacao;
+    ServicoImportacaoEquipes importacaoEquipes;
+    ServicoImportacaoResultados importacaoResultados;
+    List<String[]> classificacaoGeral;
     /**
      * Creates new form Tabelas
      */
     public FormTabelas() {
         initComponents();
-        List<String[]> classificacao;
-        DAOCampeonato daoCampeonato = new DAOCampeonato();
-        ServicoClassificacaoEquipes servicoClassificacao = new ServicoClassificacaoEquipes(daoCampeonato.getCampeonato());
-        ServicoImportacaoEquipes importacaoEquipes = new ServicoImportacaoEquipes(daoCampeonato);
+        servicoClassificacao = new ServicoClassificacaoEquipes(daoCampeonato.getCampeonato());
+        importacaoEquipes = new ServicoImportacaoEquipes(daoCampeonato);
         if (!daoCampeonato.fileExists()) {
             importacaoEquipes.importarEquipes("Equipes.txt"); //Trocar depois para dialog de inserção do arquivo Equipes
         }
-        ServicoImportacaoResultados importacaoResultados = new ServicoImportacaoResultados(daoCampeonato);
-        importacaoResultados.importarResultados("Rodada1.txt");
-        importacaoResultados.importarResultados("Rodada2.txt");
+        importacaoResultados = new ServicoImportacaoResultados(daoCampeonato);
+        //importacaoResultados.importarResultados("Rodada1.txt");
+        //importacaoResultados.importarResultados("Rodada2.txt");
         
-        classificacao = servicoClassificacao.obterClassificacaoGeral();
-        for (String[] linha : classificacao) {
+        atualizaClassificacaoGeral();
+    }
+    
+    public void atualizaClassificacaoGeral() {
+        limpaClassificacaoGeral();
+        classificacaoGeral = servicoClassificacao.obterClassificacaoGeral();
+        for (String[] linha : classificacaoGeral) {
             ((DefaultTableModel) this.tabelaGeral.getModel()).addRow(linha);
         }
+    }
+    
+    public void limpaClassificacaoGeral() {
+        DefaultTableModel model = (DefaultTableModel) this.tabelaGeral.getModel();
+        model.setRowCount(0);
     }
 
     /**
@@ -365,7 +381,7 @@ public class FormTabelas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(botaoImportar)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -389,16 +405,19 @@ public class FormTabelas extends javax.swing.JFrame {
 
     private void botaoImportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoImportarActionPerformed
 
-//        JFileChooser chooser = new JFileChooser();
-//        int returnVal = chooser.showOpenDialog(this);
-//        if (returnVal == JFileChooser.APPROVE_OPTION) {
-//            File file = chooser.getSelectedFile();
-//            try {
-//                curso = new LeitorTXT(curso).readFile(file);
-//            } catch (FileNotFoundException ex) {
-//                Logger.getLogger(FormTabelas.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-
+        JFileChooser chooser = new JFileChooser();
+        int returnVal = chooser.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = chooser.getSelectedFile();
+            try {
+                //importacaoResultados = new ServicoImportacaoResultados(daoCampeonato);
+                importacaoResultados.importarResultados(file);
+                
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(FormTabelas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        atualizaClassificacaoGeral();
 
     }//GEN-LAST:event_botaoImportarActionPerformed
 
