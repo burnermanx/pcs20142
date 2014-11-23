@@ -5,10 +5,17 @@
  */
 package servicos;
 
+import DAO.DAOCampeonato;
+
 /**
  *
  * @author Burner
  */
 abstract class ServicoImportacaoDados {
+    DAOCampeonato daoCampeonato;
+
+    public ServicoImportacaoDados(DAOCampeonato daoCampeonato) {
+        this.daoCampeonato = daoCampeonato;
+    }
     
 }

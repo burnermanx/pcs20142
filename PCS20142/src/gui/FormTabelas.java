@@ -7,6 +7,8 @@ package gui;
 
 import DAO.DAOCampeonato;
 import javax.swing.table.DefaultTableModel;
+import servicos.ServicoImportacaoEquipes;
+import servicos.ServicoImportacaoResultados;
 
 /**
  *
@@ -23,6 +25,11 @@ public class FormTabelas extends javax.swing.JFrame {
     public FormTabelas() {
         initComponents();
         DAOCampeonato daoCampeonato = new DAOCampeonato();
+        ServicoImportacaoEquipes importacaoEquipes = new ServicoImportacaoEquipes(daoCampeonato);
+        if (!daoCampeonato.fileExists()) 
+            importacaoEquipes.importarEquipes("Equipes.txt"); //Trocar depois para dialog de inserção do arquivo Equipes
+        ServicoImportacaoResultados importacaoResultados = new ServicoImportacaoResultados(daoCampeonato);
+        importacaoResultados.importarResultados("Rodada1.txt");
     }
 
     
