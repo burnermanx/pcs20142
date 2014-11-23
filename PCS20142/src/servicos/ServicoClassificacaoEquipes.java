@@ -51,7 +51,7 @@ public class ServicoClassificacaoEquipes {
             this.gp = String.valueOf(performanceEquipe.getGp());
             this.gc = String.valueOf(performanceEquipe.getGc());
             this.sg = String.valueOf(performanceEquipe.getSg());
-            this.aproveitamento = String.valueOf(performanceEquipe.getAproveitamento());
+            this.aproveitamento = String.valueOf(String.format("%.1f", performanceEquipe.getAproveitamento()));
             if (equipe.getIdentificador() != null)
                 this.indicador = String.valueOf(equipe.getIdentificador());
             String[] linha = { posicao, indicador, nomeEquipe, pg, j, v, d, gp, gc, sg, aproveitamento };

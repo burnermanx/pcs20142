@@ -410,7 +410,6 @@ public class FormTabelas extends javax.swing.JFrame {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = chooser.getSelectedFile();
             try {
-                //importacaoResultados = new ServicoImportacaoResultados(daoCampeonato);
                 importacaoResultados.importarResultados(file);
                 
             } catch (FileNotFoundException ex) {
