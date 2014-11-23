@@ -18,7 +18,7 @@ import servicos.ServicoImportacaoResultados;
  * @author Luiz Paulo
  */
 public class FormTabelas extends javax.swing.JFrame {
-
+    //private Curso curso = new LeitorXML().lerXML();
     /**
      * Creates new form Tabelas
      */
@@ -89,7 +89,6 @@ public class FormTabelas extends javax.swing.JFrame {
         txtMandanteJogo10 = new javax.swing.JLabel();
         txtScoreJogo10 = new javax.swing.JLabel();
         txtVisitanteJogo10 = new javax.swing.JLabel();
-        textoRodadas = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -291,50 +290,55 @@ public class FormTabelas extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(comboRodada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMandanteJogo1)
-                    .addComponent(txtScoreJogo1)
-                    .addComponent(txtVisitanteJogo1)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtMandanteJogo6)
                         .addComponent(txtScoreJogo6)
-                        .addComponent(txtVisitanteJogo6)))
+                        .addComponent(txtVisitanteJogo6))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtMandanteJogo1)
+                        .addComponent(txtScoreJogo1)
+                        .addComponent(txtVisitanteJogo1)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMandanteJogo2)
-                    .addComponent(txtScoreJogo2)
-                    .addComponent(txtVisitanteJogo2)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtMandanteJogo7)
                         .addComponent(txtScoreJogo7)
-                        .addComponent(txtVisitanteJogo7)))
+                        .addComponent(txtVisitanteJogo7))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtMandanteJogo2)
+                        .addComponent(txtScoreJogo2)
+                        .addComponent(txtVisitanteJogo2)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMandanteJogo3)
-                    .addComponent(txtScoreJogo3)
-                    .addComponent(txtVisitanteJogo3)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtMandanteJogo8)
                         .addComponent(txtScoreJogo8)
-                        .addComponent(txtVisitanteJogo8)))
+                        .addComponent(txtVisitanteJogo8))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtMandanteJogo3)
+                        .addComponent(txtScoreJogo3)
+                        .addComponent(txtVisitanteJogo3)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMandanteJogo4)
-                    .addComponent(txtScoreJogo4)
-                    .addComponent(txtVisitanteJogo4)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtMandanteJogo9)
                         .addComponent(txtScoreJogo9)
-                        .addComponent(txtVisitanteJogo9)))
+                        .addComponent(txtVisitanteJogo9))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtMandanteJogo4)
+                        .addComponent(txtScoreJogo4)
+                        .addComponent(txtVisitanteJogo4)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMandanteJogo5)
-                    .addComponent(txtScoreJogo5)
-                    .addComponent(txtVisitanteJogo5)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtMandanteJogo10)
                         .addComponent(txtScoreJogo10)
-                        .addComponent(txtVisitanteJogo10)))
+                        .addComponent(txtVisitanteJogo10))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtMandanteJogo5)
+                        .addComponent(txtScoreJogo5)
+                        .addComponent(txtVisitanteJogo5)))
                 .addContainerGap(258, Short.MAX_VALUE))
         );
 
@@ -353,10 +357,8 @@ public class FormTabelas extends javax.swing.JFrame {
                             .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 892, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(textoRodadas, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(botaoImportar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(186, 186, 186)
                         .addComponent(jLabel3)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
@@ -367,7 +369,6 @@ public class FormTabelas extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textoRodadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoImportar)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -391,20 +392,15 @@ public class FormTabelas extends javax.swing.JFrame {
 
     private void botaoImportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoImportarActionPerformed
 
-        //código de entrada
-//        int posicao = posicao;
-//        char indicador = pegar indicador;
-//        String equipes = pegar nome das equipes;
-//        int PG = pegar pontuacao da equipe;
-//        int J = pegar quantidade de jogos que ja jogou;
-//        int V = pegar quantidade de vitórias;
-//        int D = pegar quantidade de derrotas;
-//        int GM = pegar gols marcados;
-//        int GS = pegar gols sofridos;
-//        int SD = pegar saldo de gols;
-//        double aproveitamento = pegar aproveitamento;
-//        Object[] tabela = { posicao, indicador, equipes, PG, J, V, D, GM, GS, SD, aproveitamento };
-//        ((DefaultTableModel) this.tabelaGeral.getModel()).addRow(tabela);
+//        JFileChooser chooser = new JFileChooser();
+//        int returnVal = chooser.showOpenDialog(this);
+//        if (returnVal == JFileChooser.APPROVE_OPTION) {
+//            File file = chooser.getSelectedFile();
+//            try {
+//                curso = new LeitorTXT(curso).readFile(file);
+//            } catch (FileNotFoundException ex) {
+//                Logger.getLogger(FormTabelas.class.getName()).log(Level.SEVERE, null, ex);
+//            }
 
 
     }//GEN-LAST:event_botaoImportarActionPerformed
@@ -458,7 +454,6 @@ public class FormTabelas extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable tabelaGeral;
-    private javax.swing.JTextField textoRodadas;
     private javax.swing.JLabel txtMandanteJogo1;
     private javax.swing.JLabel txtMandanteJogo10;
     private javax.swing.JLabel txtMandanteJogo2;

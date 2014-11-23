@@ -49,10 +49,8 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="textoRodadas" min="-2" pref="170" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="botaoImportar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -67,8 +65,7 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textoRodadas" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="botaoImportar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="botaoImportar" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -311,58 +308,68 @@
                               <Component id="comboRodada" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtMandanteJogo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtScoreJogo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtVisitanteJogo1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="txtMandanteJogo6" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtScoreJogo6" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtVisitanteJogo6" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtMandanteJogo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtScoreJogo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtVisitanteJogo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtMandanteJogo2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtScoreJogo2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtVisitanteJogo2" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="txtMandanteJogo7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtScoreJogo7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtVisitanteJogo7" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtMandanteJogo2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtScoreJogo2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtVisitanteJogo2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtMandanteJogo3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtScoreJogo3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtVisitanteJogo3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="txtMandanteJogo8" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtScoreJogo8" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtVisitanteJogo8" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtMandanteJogo3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtScoreJogo3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtVisitanteJogo3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtMandanteJogo4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtScoreJogo4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtVisitanteJogo4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="txtMandanteJogo9" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtScoreJogo9" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtVisitanteJogo9" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtMandanteJogo4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtScoreJogo4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtVisitanteJogo4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="txtMandanteJogo5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtScoreJogo5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtVisitanteJogo5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="txtMandanteJogo10" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtScoreJogo10" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtVisitanteJogo10" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txtMandanteJogo5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtScoreJogo5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtVisitanteJogo5" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="258" max="32767" attributes="0"/>
@@ -576,8 +583,6 @@
             </Container>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JTextField" name="textoRodadas">
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
         </Component>
       </SubComponents>
