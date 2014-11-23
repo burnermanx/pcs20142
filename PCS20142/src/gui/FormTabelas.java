@@ -16,8 +16,7 @@ import servicos.ServicoImportacaoResultados;
  * @author Luiz Paulo
  */
 public class FormTabelas extends javax.swing.JFrame {
-    String[] entradaRodadas = { "rodada1.txt", "rodada2.txt", "rodada3.txt", "rodada4.txt", "rodada5.txt", 
-"rodada6.txt", "rodada7.txt", "rodada8.txt", "rodada9.txt", "rodada10.txt", "rodada11.txt", "rodada12.txt", "rodada13.txt", "rodada14.txt", "rodada15.txt", "rodada16.txt", "rodada17.txt", "rodada18.txt", "rodada19.txt", "rodada20.txt", "rodada21.txt", "rodada22.txt", "rodada23.txt", "rodada24.txt", "rodada25.txt", "rodada26.txt", "rodada27.txt", "rodada28.txt", "rodada29.txt", "rodada30.txt", "rodada31.txt", "rodada32.txt", "rodada33.txt", "rodada34.txt", "rodada35.txt", "rodada36.txt", "rodada37.txt", "rodada38.txt" }; 
+    
     
     
 
@@ -205,13 +204,13 @@ public class FormTabelas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoImportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoImportarActionPerformed
-    String entradaRodada;
-    entradaRodada = textoRodadas.getText();
-    for (int i = 0; i < 0; i++){
-        if (entradaRodada.equals(entradaRodadas[i]) != true){
-            jLabel3.setText("Arquivo incorreto.");
-        }
-    }
+    
+    String aviso = jLabel3.getText();
+    String entradaRodada = textoRodadas.getText();
+    ServicoImportacaoResultados.verificarRodadas(entradaRodada, aviso);
+    jLabel3.setText(aviso);
+    
+
         
         
         
