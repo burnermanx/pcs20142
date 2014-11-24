@@ -69,6 +69,19 @@ public class Campeonato {
     }
     
     
+    public int obterUltimaRodada() {
+        int maxRodada = 0;
+        for (Turno turno : turnos) {
+            Map<Integer, Rodada> rodadas = turno.getRodadas();
+            for (Entry<Integer, Rodada> entry : rodadas.entrySet()) {
+                Integer key = entry.getKey();
+                Rodada rodada = entry.getValue();
+                if (rodada.getNumero() > maxRodada)
+                    maxRodada = rodada.getNumero();
+            }
+        }
+        return maxRodada;
+    }
     
     public Equipe buscaEquipe(String nome) {
         for (Equipe busca : equipes) {

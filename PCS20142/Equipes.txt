@@ -4,7 +4,7 @@ Atlético-PR
 Bahia
 Botafogo
 Chapecoense
-Corinthians (Libertadores)
+Corinthians
 Coritiba
 Criciúma
 Cruzeiro
@@ -14,7 +14,7 @@ Fluminense
 Goiás
 Grêmio
 Internacional
-Palmeiras (Libertadores)
+Palmeiras
 Santos
 São Paulo
 Sport
