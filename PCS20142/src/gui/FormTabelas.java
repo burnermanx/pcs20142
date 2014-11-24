@@ -7,7 +7,6 @@ package gui;
 
 import DAO.DAOCampeonato;
 import dominio.Jogo;
-import dominio.Rodada;
 import java.io.*;
 import java.util.List;
 import java.util.logging.Level;
@@ -376,8 +375,8 @@ public class FormTabelas extends javax.swing.JFrame {
                         .addComponent(txtVisitanteJogo1)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtMandanteJogo7)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtMandanteJogo7)
                         .addComponent(txtScoreJogo7)
                         .addComponent(txtVisitanteJogo7))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -396,8 +395,8 @@ public class FormTabelas extends javax.swing.JFrame {
                         .addComponent(txtVisitanteJogo3)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtMandanteJogo9)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtMandanteJogo9)
                         .addComponent(txtVisitanteJogo9)
                         .addComponent(txtScoreJogo9))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -406,8 +405,8 @@ public class FormTabelas extends javax.swing.JFrame {
                         .addComponent(txtVisitanteJogo4)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtMandanteJogo10)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtMandanteJogo10)
                         .addComponent(txtVisitanteJogo10)
                         .addComponent(txtScoreJogo10))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -416,8 +415,6 @@ public class FormTabelas extends javax.swing.JFrame {
                         .addComponent(txtVisitanteJogo5)))
                 .addContainerGap(148, Short.MAX_VALUE))
         );
-
-        txtVisitanteJogo1.getAccessibleContext().setAccessibleName("VISITANTE");
 
         jTabbedPane1.addTab("Rodadas", jPanel2);
 

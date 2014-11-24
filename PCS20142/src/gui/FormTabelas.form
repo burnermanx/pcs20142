@@ -364,8 +364,8 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="txtMandanteJogo7" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtMandanteJogo7" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="txtScoreJogo7" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtVisitanteJogo7" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -390,8 +390,8 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="txtMandanteJogo9" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtMandanteJogo9" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="txtVisitanteJogo9" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtScoreJogo9" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -403,8 +403,8 @@
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="txtMandanteJogo10" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtMandanteJogo10" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="txtVisitanteJogo10" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtScoreJogo10" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -452,9 +452,6 @@
                     <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="VISITANTE"/>
                   </Properties>
-                  <AccessibilityProperties>
-                    <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="VISITANTE"/>
-                  </AccessibilityProperties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="txtMandanteJogo2">
                   <Properties>
