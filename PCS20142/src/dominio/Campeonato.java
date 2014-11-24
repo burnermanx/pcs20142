@@ -83,6 +83,7 @@ public class Campeonato {
         return maxRodada;
     }
     
+    
     public Equipe buscaEquipe(String nome) {
         for (Equipe busca : equipes) {
             if (nome.equals(busca.getNome()))

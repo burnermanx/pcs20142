@@ -6,16 +6,19 @@
 package gui;
 
 import DAO.DAOCampeonato;
+import dominio.Jogo;
 import dominio.Rodada;
 import java.io.*;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.MutableComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 import servicos.ServicoClassificacaoEquipes;
 import servicos.ServicoImportacaoEquipes;
 import servicos.ServicoImportacaoResultados;
+import servicos.ServicoListagemJogos;
 
 /**
  *
@@ -27,6 +30,7 @@ public class FormTabelas extends javax.swing.JFrame {
     ServicoClassificacaoEquipes servicoClassificacao;
     ServicoImportacaoEquipes importacaoEquipes;
     ServicoImportacaoResultados importacaoResultados;
+    ServicoListagemJogos servicoJogos; 
     List<String[]> classificacaoGeral;
     
     
@@ -41,6 +45,7 @@ public class FormTabelas extends javax.swing.JFrame {
             importacaoEquipes.importarEquipes("Equipes.txt");
         }
         importacaoResultados = new ServicoImportacaoResultados(daoCampeonato);
+        servicoJogos = new ServicoListagemJogos(daoCampeonato.getCampeonato());
 
         
         atualizaClassificacaoGeral();
@@ -52,7 +57,23 @@ public class FormTabelas extends javax.swing.JFrame {
         for (String[] linha : classificacaoGeral) {
             ((DefaultTableModel) this.tabelaGeral.getModel()).addRow(linha);
         }
-        txtNumRodada.setText(String.valueOf(daoCampeonato.getCampeonato().obterUltimaRodada()));
+        int rodada = daoCampeonato.getCampeonato().obterUltimaRodada();
+        txtNumRodada.setText(String.valueOf(rodada));
+        
+        atualizaComboBox();
+        
+    }
+    
+    public void atualizaComboBox() {
+        int rodada = daoCampeonato.getCampeonato().obterUltimaRodada();
+        MutableComboBoxModel model = (MutableComboBoxModel) comboRodada.getModel();
+        if (model.getSize() == 0) {
+            for (int i = 1; i <= rodada; i++) {
+                model.insertElementAt(i, i-1);
+            }       
+        } else {
+            model.insertElementAt(rodada, rodada-1);        
+        }
     }
     
     public void limpaClassificacaoGeral() {
@@ -157,67 +178,101 @@ public class FormTabelas extends javax.swing.JFrame {
 
         jLabel2.setText("Rodada:");
 
-        comboRodada.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38" }));
+        comboRodada.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboRodadaItemStateChanged(evt);
+            }
+        });
 
-        txtMandanteJogo1.setText("Internacional");
+        txtMandanteJogo1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtMandanteJogo1.setText("MANDANTE");
 
+        txtScoreJogo1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtScoreJogo1.setText("0x0");
 
-        txtVisitanteJogo1.setText("Internacional");
+        txtVisitanteJogo1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtVisitanteJogo1.setText("VISITANTE");
 
-        txtMandanteJogo2.setText("Internacional");
+        txtMandanteJogo2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtMandanteJogo2.setText("MANDANTE");
 
+        txtScoreJogo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtScoreJogo2.setText("0x0");
 
-        txtVisitanteJogo2.setText("Internacional");
+        txtVisitanteJogo2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtVisitanteJogo2.setText("VISITANTE");
 
-        txtMandanteJogo3.setText("Internacional");
+        txtMandanteJogo3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtMandanteJogo3.setText("MANDANTE");
 
+        txtScoreJogo3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtScoreJogo3.setText("0x0");
 
-        txtVisitanteJogo3.setText("Internacional");
+        txtVisitanteJogo3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtVisitanteJogo3.setText("VISITANTE");
 
-        txtMandanteJogo4.setText("Internacional");
+        txtMandanteJogo4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtMandanteJogo4.setText("MANDANTE");
 
+        txtScoreJogo4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtScoreJogo4.setText("0x0");
 
-        txtVisitanteJogo4.setText("Internacional");
+        txtVisitanteJogo4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtVisitanteJogo4.setText("VISITANTE");
 
-        txtMandanteJogo5.setText("Internacional");
+        txtMandanteJogo5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtMandanteJogo5.setText("MANDANTE");
 
+        txtScoreJogo5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtScoreJogo5.setText("0x0");
 
-        txtVisitanteJogo5.setText("Internacional");
+        txtVisitanteJogo5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtVisitanteJogo5.setText("VISITANTE");
 
-        txtMandanteJogo6.setText("Internacional");
+        txtMandanteJogo6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtMandanteJogo6.setText("MANDANTE");
 
+        txtScoreJogo6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtScoreJogo6.setText("0x0");
 
-        txtVisitanteJogo6.setText("Internacional");
+        txtVisitanteJogo6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtVisitanteJogo6.setText("VISITANTE");
 
-        txtMandanteJogo7.setText("Internacional");
+        txtMandanteJogo7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtMandanteJogo7.setText("MANDANTE");
 
+        txtScoreJogo7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtScoreJogo7.setText("0x0");
 
-        txtVisitanteJogo7.setText("Internacional");
+        txtVisitanteJogo7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtVisitanteJogo7.setText("VISITANTE");
 
-        txtMandanteJogo8.setText("Internacional");
+        txtMandanteJogo8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtMandanteJogo8.setText("MANDANTE");
 
+        txtScoreJogo8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtScoreJogo8.setText("0x0");
 
-        txtVisitanteJogo8.setText("Internacional");
+        txtVisitanteJogo8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtVisitanteJogo8.setText("VISITANTE");
 
-        txtMandanteJogo9.setText("Internacional");
+        txtMandanteJogo9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtMandanteJogo9.setText("MANDANTE");
 
+        txtScoreJogo9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtScoreJogo9.setText("0x0");
 
-        txtVisitanteJogo9.setText("Internacional");
+        txtVisitanteJogo9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtVisitanteJogo9.setText("VISITANTE");
 
-        txtMandanteJogo10.setText("Internacional");
+        txtMandanteJogo10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtMandanteJogo10.setText("MANDANTE");
 
+        txtScoreJogo10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtScoreJogo10.setText("0x0");
 
-        txtVisitanteJogo10.setText("Internacional");
+        txtVisitanteJogo10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtVisitanteJogo10.setText("VISITANTE");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -227,76 +282,80 @@ public class FormTabelas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txtMandanteJogo4)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtMandanteJogo5, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
+                            .addComponent(txtMandanteJogo3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtMandanteJogo2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtMandanteJogo1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtMandanteJogo4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtScoreJogo4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtVisitanteJogo4))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txtMandanteJogo5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtScoreJogo5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtVisitanteJogo5))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtMandanteJogo1)
-                                .addComponent(jLabel2))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(comboRodada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(txtScoreJogo1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtVisitanteJogo1)
-                                    .addGap(45, 45, 45)
-                                    .addComponent(txtMandanteJogo6)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtScoreJogo6)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtVisitanteJogo6))))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(txtMandanteJogo2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtScoreJogo2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtVisitanteJogo2))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(txtMandanteJogo3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(txtScoreJogo1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtVisitanteJogo1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(txtScoreJogo2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtVisitanteJogo2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtScoreJogo3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtVisitanteJogo3)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(txtMandanteJogo8)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtScoreJogo8)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtVisitanteJogo8))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(txtMandanteJogo7)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtScoreJogo7)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtVisitanteJogo7))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(txtMandanteJogo9)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtScoreJogo9)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtVisitanteJogo9))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(txtMandanteJogo10)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtScoreJogo10)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtVisitanteJogo10))))))
-                .addContainerGap(504, Short.MAX_VALUE))
+                                    .addComponent(txtScoreJogo4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtVisitanteJogo4, javax.swing.GroupLayout.DEFAULT_SIZE, 74, Short.MAX_VALUE)
+                                    .addComponent(txtVisitanteJogo3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(txtScoreJogo5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtVisitanteJogo5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(140, 140, 140)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(txtMandanteJogo10, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtScoreJogo10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtVisitanteJogo10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(txtMandanteJogo6, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtScoreJogo6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtVisitanteJogo6, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(txtMandanteJogo9, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtScoreJogo9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtVisitanteJogo9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(txtMandanteJogo8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtScoreJogo8))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(txtMandanteJogo7, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(txtScoreJogo7)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtVisitanteJogo7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txtVisitanteJogo8, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE))))
+                                .addGap(458, 458, 458))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(comboRodada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(395, 395, 395))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -339,8 +398,8 @@ public class FormTabelas extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtMandanteJogo9)
-                        .addComponent(txtScoreJogo9)
-                        .addComponent(txtVisitanteJogo9))
+                        .addComponent(txtVisitanteJogo9)
+                        .addComponent(txtScoreJogo9))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtMandanteJogo4)
                         .addComponent(txtScoreJogo4)
@@ -349,14 +408,16 @@ public class FormTabelas extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtMandanteJogo10)
-                        .addComponent(txtScoreJogo10)
-                        .addComponent(txtVisitanteJogo10))
+                        .addComponent(txtVisitanteJogo10)
+                        .addComponent(txtScoreJogo10))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtMandanteJogo5)
                         .addComponent(txtScoreJogo5)
                         .addComponent(txtVisitanteJogo5)))
                 .addContainerGap(148, Short.MAX_VALUE))
         );
+
+        txtVisitanteJogo1.getAccessibleContext().setAccessibleName("VISITANTE");
 
         jTabbedPane1.addTab("Rodadas", jPanel2);
 
@@ -446,6 +507,62 @@ public class FormTabelas extends javax.swing.JFrame {
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         System.exit(1);
     }//GEN-LAST:event_formWindowClosed
+
+    private void comboRodadaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboRodadaItemStateChanged
+        List<Jogo> jogos;
+        int rodada = (Integer) evt.getItem();
+        String[] timeMandante = new String[10];
+        String[] timeVisitante = new String[10];
+        String[] score = new String[10];
+        jogos = servicoJogos.obterJogos(rodada);
+        int i=0;
+        for (Jogo jogo : jogos) {
+            timeMandante[i] = jogo.getEquipeMandante().getNome();
+            timeVisitante[i] = jogo.getEquipeVisitante().getNome();
+            String stringScore = String.valueOf(jogo.getScoreMandante()) + "x" + String.valueOf(jogo.getScoreVisitante());
+            score[i] = stringScore;
+            i++;
+        }
+        txtMandanteJogo1.setText(timeMandante[0]);
+        txtVisitanteJogo1.setText(timeVisitante[0]);
+        txtScoreJogo1.setText(score[0]);
+        
+        txtMandanteJogo2.setText(timeMandante[1]);
+        txtVisitanteJogo2.setText(timeVisitante[1]);
+        txtScoreJogo2.setText(score[1]);
+        
+        txtMandanteJogo3.setText(timeMandante[2]);
+        txtVisitanteJogo3.setText(timeVisitante[2]);
+        txtScoreJogo3.setText(score[2]);
+        
+        txtMandanteJogo4.setText(timeMandante[3]);
+        txtVisitanteJogo4.setText(timeVisitante[3]);
+        txtScoreJogo4.setText(score[3]);
+        
+        txtMandanteJogo5.setText(timeMandante[4]);
+        txtVisitanteJogo5.setText(timeVisitante[4]);
+        txtScoreJogo5.setText(score[4]);
+        
+        txtMandanteJogo6.setText(timeMandante[5]);
+        txtVisitanteJogo6.setText(timeVisitante[5]);
+        txtScoreJogo6.setText(score[5]);
+        
+        txtMandanteJogo7.setText(timeMandante[6]);
+        txtVisitanteJogo7.setText(timeVisitante[6]);
+        txtScoreJogo7.setText(score[6]);
+        
+        txtMandanteJogo8.setText(timeMandante[7]);
+        txtVisitanteJogo8.setText(timeVisitante[7]);
+        txtScoreJogo8.setText(score[7]);
+        
+        txtMandanteJogo9.setText(timeMandante[8]);
+        txtVisitanteJogo9.setText(timeVisitante[8]);
+        txtScoreJogo9.setText(score[8]);
+        
+        txtMandanteJogo10.setText(timeMandante[9]);
+        txtVisitanteJogo10.setText(timeVisitante[9]);
+        txtScoreJogo10.setText(score[9]);
+    }//GEN-LAST:event_comboRodadaItemStateChanged
 
     /**
      * @param args the command line arguments
