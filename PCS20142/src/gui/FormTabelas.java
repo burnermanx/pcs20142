@@ -41,6 +41,7 @@ public class FormTabelas extends javax.swing.JFrame {
             importacaoEquipes.importarEquipes("Equipes.txt"); //Trocar depois para dialog de inserção do arquivo Equipes
         }
         importacaoResultados = new ServicoImportacaoResultados(daoCampeonato);
+        
         //importacaoResultados.importarResultados("Rodada1.txt");
         //importacaoResultados.importarResultados("Rodada2.txt");
         
@@ -115,6 +116,11 @@ public class FormTabelas extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Forte", 0, 40)); // NOI18N
         jLabel1.setText("Campeonato Brasileiro");
@@ -437,6 +443,10 @@ public class FormTabelas extends javax.swing.JFrame {
         atualizaClassificacaoGeral();
 
     }//GEN-LAST:event_botaoImportarActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        System.exit(1);
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments

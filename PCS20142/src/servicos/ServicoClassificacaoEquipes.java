@@ -38,6 +38,7 @@ public class ServicoClassificacaoEquipes {
     public List<String[]> obterClassificacaoGeral() {
         List<String[]> classificacaoGeral = new ArrayList<>();
         List<Equipe> equipes;
+        List<Linha> linhas = new ArrayList<>();
         int i = 1;
         equipes = campeonato.getEquipes();
         for (Equipe equipe : equipes) {
@@ -56,12 +57,13 @@ public class ServicoClassificacaoEquipes {
             if (equipe.getIdentificador() != null) {
                 this.indicador = String.valueOf(equipe.getIdentificador());
             }
-            String[] linha = {posicao, indicador, nomeEquipe, pg, j, v, e, d, gp, gc, sg, aproveitamento};
-            classificacaoGeral.add(linha);
-            classificacaoGeral = ordenarClassificacao(classificacaoGeral);
-            classificacaoGeral = indicarClassificacao(classificacaoGeral);
-
+            linhas.add(new Linha (posicao, indicador, nomeEquipe, Integer.parseInt(pg), Integer.parseInt(j), Integer.parseInt(v), Integer.parseInt(e), Integer.parseInt(d), Integer.parseInt(gp), Integer.parseInt(gc), Integer.parseInt(sg), aproveitamento));
         }
+        Collections.sort(linhas);
+        for (Linha linha : linhas) {
+            classificacaoGeral.add(linha.obterLinha());
+        }
+        indicarClassificacao(classificacaoGeral);
         return classificacaoGeral;
     }
 
@@ -73,39 +75,89 @@ public class ServicoClassificacaoEquipes {
         return null;
     }
 
-    public List<String[]> ordenarClassificacao(List<String[]> classificacao) {
-        List<String[]> ordenado = new ArrayList<>();
-        int i = 0;
-        while (!classificacao.isEmpty()) {
-            i++;
-            String[] aux = {"0", "0", "", "0", "0", "0", "0", "0", "0", "0", "0", "0.0"};
-            for (String[] s : classificacao) {
-                if (Integer.parseInt(s[3]) >= Integer.parseInt(aux[3])) {
-                    aux = s;
-                }
-
-            }
-            aux[0] = String.valueOf(i);
-            ordenado.add(aux);
-            classificacao.remove(classificacao.indexOf(aux));
-        }
-        return ordenado;
-    }
-
     public List<String[]> indicarClassificacao(List<String[]> classificacao) {
         List<String[]> indicados = new ArrayList<>();
+        int i=0;
         for (String[] linha : classificacao) {
-            if (Integer.valueOf(linha[0]) >= 1 && Integer.valueOf(linha[0]) <= 4) {
+            i++;
+            if (i >= 1 && i <= 4) {
                 linha[1] = "L";
             }
-            if (Integer.valueOf(linha[0]) >= 17 && Integer.valueOf(linha[0]) <= 20) {
+            if (i >= 17 && i <= 20) {
                 linha[1] = "R";
             }
-            if (Integer.valueOf(linha[0]) >= 5 && Integer.valueOf(linha[0]) <= 16) {
+            if (i >= 5 && i <= 16) {
                 linha[1] = "";
             }
+            linha[0] = String.valueOf(i);
             indicados.add(linha);
         }
         return indicados;
+    }
+    
+    class Linha implements Comparable<Linha> {
+        private String posicao;
+        private String indicador;
+        private String nomeEquipe;
+        private int pg;
+        private int j;
+        private int v;
+        private int e;
+        private int d;
+        private int gp;
+        private int gc;
+        private int sg;
+        private String aproveitamento;
+
+        public Linha(String posicao, String indicador, String nomeEquipe, int pg, int j, int v, int e, int d, int gp, int gc, int sg, String aproveitamento) {
+            this.posicao = posicao;
+            this.indicador = indicador;
+            this.nomeEquipe = nomeEquipe;
+            this.pg = pg;
+            this.j = j;
+            this.v = v;
+            this.e = e;
+            this.d = d;
+            this.gp = gp;
+            this.gc = gc;
+            this.sg = sg;
+            this.aproveitamento = aproveitamento;
+        }
+        
+        public String[] obterLinha() {
+            String pg = String.valueOf(this.pg);
+            String j = String.valueOf(this.j);
+            String v = String.valueOf(this.v);
+            String e = String.valueOf(this.e);
+            String d = String.valueOf(this.d);
+            String gp = String.valueOf(this.gp);
+            String gc = String.valueOf(this.gc);
+            String sg = String.valueOf(this.sg);
+            String[] resultado = {posicao, indicador, nomeEquipe, pg, j, v, e, d ,gp, gc, sg, aproveitamento };
+            return resultado;
+        }
+        
+        
+        @Override
+        public int compareTo(Linha o) {
+            if (this.pg > o.pg) {
+                return -1;
+            } else if (this.pg == o.pg) {
+                if (this.v > o.v) {
+                    return -1;
+                } else if (this.v == o.v) {
+                    if (this.sg > o.sg) {
+                        return -1;
+                    } else if (this.sg == o.sg) {
+                        if (this.gp > o.gp) {
+                            return -1;
+                        }
+                    }
+                }
+                return 0;
+            }
+            return 1;      
+        }
+        
     }
 }
