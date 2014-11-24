@@ -38,12 +38,10 @@ public class FormTabelas extends javax.swing.JFrame {
         servicoClassificacao = new ServicoClassificacaoEquipes(daoCampeonato.getCampeonato());
         importacaoEquipes = new ServicoImportacaoEquipes(daoCampeonato);
         if (!daoCampeonato.fileExists()) {
-            importacaoEquipes.importarEquipes("Equipes.txt"); //Trocar depois para dialog de inserção do arquivo Equipes
+            importacaoEquipes.importarEquipes("Equipes.txt");
         }
         importacaoResultados = new ServicoImportacaoResultados(daoCampeonato);
-        
-        //importacaoResultados.importarResultados("Rodada1.txt");
-        //importacaoResultados.importarResultados("Rodada2.txt");
+
         
         atualizaClassificacaoGeral();
     }

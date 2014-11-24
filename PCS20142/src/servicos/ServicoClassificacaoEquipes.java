@@ -29,7 +29,6 @@ public class ServicoClassificacaoEquipes {
     private String gc;
     private String sg;
     private String aproveitamento;
-    //String[] linha = { posicao, indicador, equipes, pg, j, v, d, gp, gc, sg, aproveitamento };
 
     public ServicoClassificacaoEquipes(Campeonato campeonato) {
         this.campeonato = campeonato;

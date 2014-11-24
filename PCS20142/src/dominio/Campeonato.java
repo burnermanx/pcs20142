@@ -82,7 +82,6 @@ public class Campeonato {
         for (Turno turno : turnos) {
             Map<Integer, Rodada> rodadas = turno.getRodadas();
             for (Entry<Integer, Rodada> entry : rodadas.entrySet()) {
-                Integer key = entry.getKey();
                 Rodada rodada = entry.getValue();
                 for (Jogo jogo : rodada.getJogos()) {
                     jogo.inserirResultado();
