@@ -21,6 +21,10 @@ public class ServicoImportacaoEquipes extends ServicoImportacaoDados {
         super(daoCampeonato);
         campeonato = daoCampeonato.getCampeonato();
     }
+    
+    private static String removeLastChar(String str) {
+        return str.substring(0,str.length()-1);
+    }
 
     public void importarEquipes(String file) {
         BufferedReader reader = null;
@@ -33,7 +37,12 @@ public class ServicoImportacaoEquipes extends ServicoImportacaoDados {
                     String linha = reader.readLine();
                     //System.out.println(linha);
                     String[] times = new String[2];
-                    times = linha.split("[(]");
+                    if (linha.contains("(")) {
+                        times = linha.split("[(]");
+                        times[0] = removeLastChar(times[0]);
+                    } else {
+                        times = linha.split("[(]");
+                    }
                     //System.out.println("Time: " + times[0]);
                     if (times.length >= 2) {
                         campeonato.inserirEquipe(times[0], "L");
