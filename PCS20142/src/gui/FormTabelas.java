@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.MutableComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 import servicos.ServicoClassificacaoEquipes;
@@ -71,7 +72,8 @@ public class FormTabelas extends javax.swing.JFrame {
                 model.insertElementAt(i, i-1);
             }       
         } else {
-            model.insertElementAt(rodada, rodada-1);        
+            if (model.getElementAt(rodada-1) == null)
+                model.insertElementAt(rodada, rodada-1);        
         }
     }
     
@@ -491,7 +493,11 @@ public class FormTabelas extends javax.swing.JFrame {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = chooser.getSelectedFile();
             try {
-                importacaoResultados.importarResultados(file);
+                if (importacaoResultados.verificarArquivo(file)) {
+                    importacaoResultados.importarResultados(file);
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Insira o arquivo correspondente a rodada " + String.valueOf(daoCampeonato.getCampeonato().obterUltimaRodada()+1) + " ou qualquer rodada passada.", "Arquivo inválido", JOptionPane.WARNING_MESSAGE);
+                }
                 
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(FormTabelas.class.getName()).log(Level.SEVERE, null, ex);

@@ -42,7 +42,7 @@ public class ServicoImportacaoResultados extends ServicoImportacaoDados {
                 } else {
                     String[] vetRodada = linha.split(" ");
                     numRodada = Integer.parseInt(vetRodada[1]);
-                    if (numRodada <= campeonato.obterUltimaRodada()+1) {
+                    if (numRodada <= campeonato.obterUltimaRodada() + 1) {
                         resultado = true;
                     }
                 }
@@ -66,57 +66,56 @@ public class ServicoImportacaoResultados extends ServicoImportacaoDados {
         Equipe visitante;
 
         try {
-            if (verificarArquivo(file)) {
-                try {
-                    reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "Cp1252"));
-                    String readRodada = reader.readLine();
-                    String[] numeroRodada = readRodada.split(" ");
-                    int numRodada = Integer.parseInt(numeroRodada[1]);
+            try {
+                reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "Cp1252"));
+                String readRodada = reader.readLine();
+                String[] numeroRodada = readRodada.split(" ");
+                int numRodada = Integer.parseInt(numeroRodada[1]);
 
-                    //Inserindo turnos e rodadas
-                    if (numRodada < 20) {
-                        if (!campeonato.verificarTurno(1)) {
-                            campeonato.inserirTurno(1);
-                        }
-                        turno = campeonato.obterTurno(1);
-                        rodada = turno.obterRodada(numRodada);
-                    } else if (numRodada >= 20) {
-                        if (!campeonato.verificarTurno(2)) {
-                            campeonato.inserirTurno(2);
-                        }
-                        turno = campeonato.obterTurno(2);
-                        rodada = turno.obterRodada(numRodada);
+                //Inserindo turnos e rodadas
+                if (numRodada < 20) {
+                    if (!campeonato.verificarTurno(1)) {
+                        campeonato.inserirTurno(1);
                     }
-                    //Inserindo resultado
-                    while (reader.ready()) {
-                        String linha = reader.readLine();
-                        System.out.println(linha);
-                        String[] times = linha.split("\\s\\d+[x]\\d+\\s");
-                        Pattern pat = Pattern.compile("(\\d+)[x](\\d+)");
-                        Matcher mat = pat.matcher(linha);
-                        String placar = "";
-                        while (mat.find()) {
-                            placar = mat.group();
-                        }
-                        String[] placarSplit = placar.split("[x]");
-                        String strMandante = times[0];
-                        String strVisitante = times[1];
-                        int scrMandante = Integer.parseInt(placarSplit[0]);
-                        int scrVisitante = Integer.parseInt(placarSplit[1]);
-                        mandante = campeonato.buscaEquipe(strMandante);
-                        visitante = campeonato.buscaEquipe(strVisitante);
-                        mandante.apagaPerformance();
-                        visitante.apagaPerformance();
-                        rodada.insereJogo(scrMandante, scrVisitante, mandante, visitante);
+                    turno = campeonato.obterTurno(1);
+                    rodada = turno.obterRodada(numRodada);
+                } else if (numRodada >= 20) {
+                    if (!campeonato.verificarTurno(2)) {
+                        campeonato.inserirTurno(2);
                     }
-                    campeonato.recalcularPerfomance();
-                    daoCampeonato.salvarAlteracoes();
-                } finally {
-                    if (reader != null) {
-                        reader.close();
+                    turno = campeonato.obterTurno(2);
+                    rodada = turno.obterRodada(numRodada);
+                }
+                //Inserindo resultado
+                while (reader.ready()) {
+                    String linha = reader.readLine();
+                    System.out.println(linha);
+                    String[] times = linha.split("\\s\\d+[x]\\d+\\s");
+                    Pattern pat = Pattern.compile("(\\d+)[x](\\d+)");
+                    Matcher mat = pat.matcher(linha);
+                    String placar = "";
+                    while (mat.find()) {
+                        placar = mat.group();
                     }
+                    String[] placarSplit = placar.split("[x]");
+                    String strMandante = times[0];
+                    String strVisitante = times[1];
+                    int scrMandante = Integer.parseInt(placarSplit[0]);
+                    int scrVisitante = Integer.parseInt(placarSplit[1]);
+                    mandante = campeonato.buscaEquipe(strMandante);
+                    visitante = campeonato.buscaEquipe(strVisitante);
+                    mandante.apagaPerformance();
+                    visitante.apagaPerformance();
+                    rodada.insereJogo(scrMandante, scrVisitante, mandante, visitante);
+                }
+                campeonato.recalcularPerfomance();
+                daoCampeonato.salvarAlteracoes();
+            } finally {
+                if (reader != null) {
+                    reader.close();
                 }
             }
+
         } catch (IOException e) {
             System.out.println("Erro no acesso no arquivo de resultados." + e.getMessage());
         }
