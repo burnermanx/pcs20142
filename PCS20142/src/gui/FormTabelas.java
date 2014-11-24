@@ -7,6 +7,7 @@ package gui;
 
 import DAO.DAOCampeonato;
 import dominio.Jogo;
+import java.awt.event.WindowEvent;
 import java.io.*;
 import java.util.List;
 import java.util.logging.Level;
@@ -76,6 +77,11 @@ public class FormTabelas extends javax.swing.JFrame {
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(FormTabelas.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+        if (returnVal == JFileChooser.CANCEL_OPTION) {
+                JOptionPane.showMessageDialog(rootPane, "A aplicação só irá continuar se inserir o arquivo de equipes.", "Operação inválida", JOptionPane.ERROR_MESSAGE);
+                this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+                System.exit(1);
         }
         atualizaClassificacaoGeral();
     }
