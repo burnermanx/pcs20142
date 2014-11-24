@@ -36,7 +36,7 @@ public class ServicoImportacaoEquipes extends ServicoImportacaoDados {
                 while (reader.ready()) {
                     String linha = reader.readLine();
                     //System.out.println(linha);
-                    String[] times = new String[2];
+                    String[] times;
                     if (linha.contains("(")) {
                         times = linha.split("[(]");
                         times[0] = removeLastChar(times[0]);
