@@ -13,7 +13,7 @@ import java.util.*;
  */
 public class Turno {
     private int numero;
-    private Map<Integer, Rodada>rodadas = new HashMap<Integer, Rodada>();
+    private Map<Integer, Rodada>rodadas = new HashMap<>();
 
     public Turno() {
     }

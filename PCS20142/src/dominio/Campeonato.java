@@ -14,8 +14,8 @@ import java.util.Map.Entry;
  */
 public class Campeonato {
     private int ano;
-    private List<Turno> turnos = new ArrayList<Turno>();
-    private List<Equipe> equipes = new ArrayList<Equipe>();
+    private List<Turno> turnos = new ArrayList<>();
+    private List<Equipe> equipes = new ArrayList<>();
     
     public Campeonato() {
         

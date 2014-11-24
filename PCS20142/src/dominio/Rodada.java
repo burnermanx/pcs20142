@@ -12,7 +12,7 @@ import java.util.*;
  */
 public class Rodada {
     private int numero;
-    private List<Jogo> jogos = new ArrayList<Jogo>();
+    private List<Jogo> jogos = new ArrayList<>();
 
     public Rodada() {
         
