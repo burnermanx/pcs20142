@@ -37,9 +37,7 @@ public class Campeonato {
     }
     
     public boolean verificarTurno(int numTurno) {
-        if (turnos.size() >= numTurno)
-            return true;
-        return false;
+        return turnos.size() >= numTurno;
     }
     
     public Turno obterTurno(int numTurno) {

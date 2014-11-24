@@ -1,11 +1,11 @@
 RODADA: 4
-SÃ£o Paulo 0x1 GoiÃ¡s
-CriciÃºma 3x1 Santos
-Portuguesa 1x1 Internacional
-Vasco 2x0 AtlÃ©tico-MG
-GrÃªmio 1x0 VitÃ³ria
-Ponte Preta 3x4 AtlÃ©tico-PR
-Flamengo 0x1 NÃ¡utico
-Bahia 2x1 Botafogo
-Cruzeiro 1x0 Corinthians
-Coritiba 2x1 Fluminense
+Palmeiras 2x0 Goiás
+Internacional 2x1 Atlético-PR
+Botafogo 6x0 Criciúma
+Fluminense 2x0 Flamengo
+São Paulo 1x1 Corinthians
+Atlético-MG 2x1 Cruzeiro
+Chapecoense 1x2 Grêmio
+Coritiba 0x1 Sport
+Bahia 1x1 Vitória
+Figueirense 0x2 Santos

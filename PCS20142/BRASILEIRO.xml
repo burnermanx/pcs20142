@@ -8,33 +8,33 @@
    <void method="add">
     <object class="dominio.Equipe" id="Equipe0">
      <void property="nome">
-      <string>Cruzeiro</string>
+      <string>Atlético-MG</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
        <void property="aproveitamento">
-        <double>66.66666666666666</double>
+        <double>46.666666666666664</double>
+       </void>
+       <void property="d">
+        <int>2</int>
        </void>
        <void property="e">
         <int>1</int>
        </void>
        <void property="gc">
-        <int>2</int>
+        <int>5</int>
        </void>
        <void property="gp">
-        <int>3</int>
+        <int>5</int>
        </void>
        <void property="j">
-        <int>2</int>
+        <int>5</int>
        </void>
        <void property="pg">
-        <int>4</int>
-       </void>
-       <void property="sg">
-        <int>1</int>
+        <int>7</int>
        </void>
        <void property="v">
-        <int>1</int>
+        <int>2</int>
        </void>
       </object>
      </void>
@@ -43,30 +43,33 @@
    <void method="add">
     <object class="dominio.Equipe" id="Equipe1">
      <void property="nome">
-      <string>São Paulo</string>
+      <string>Atlético-PR</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
        <void property="aproveitamento">
-        <double>66.66666666666666</double>
+        <double>33.33333333333333</double>
        </void>
-       <void property="e">
-        <int>1</int>
-       </void>
-       <void property="gc">
-        <int>1</int>
-       </void>
-       <void property="gp">
-        <int>4</int>
-       </void>
-       <void property="j">
+       <void property="d">
         <int>2</int>
        </void>
+       <void property="e">
+        <int>2</int>
+       </void>
+       <void property="gc">
+        <int>8</int>
+       </void>
+       <void property="gp">
+        <int>7</int>
+       </void>
+       <void property="j">
+        <int>5</int>
+       </void>
        <void property="pg">
-        <int>4</int>
+        <int>5</int>
        </void>
        <void property="sg">
-        <int>3</int>
+        <int>-1</int>
        </void>
        <void property="v">
         <int>1</int>
@@ -78,30 +81,36 @@
    <void method="add">
     <object class="dominio.Equipe" id="Equipe2">
      <void property="nome">
-      <string>Corinthians</string>
+      <string>Bahia</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
        <void property="aproveitamento">
-        <double>66.66666666666666</double>
+        <double>46.666666666666664</double>
+       </void>
+       <void property="d">
+        <int>2</int>
        </void>
        <void property="e">
         <int>1</int>
        </void>
-       <void property="gp">
-        <int>2</int>
-       </void>
-       <void property="j">
-        <int>2</int>
-       </void>
-       <void property="pg">
+       <void property="gc">
         <int>4</int>
        </void>
+       <void property="gp">
+        <int>5</int>
+       </void>
+       <void property="j">
+        <int>5</int>
+       </void>
+       <void property="pg">
+        <int>7</int>
+       </void>
        <void property="sg">
-        <int>2</int>
+        <int>1</int>
        </void>
        <void property="v">
-        <int>1</int>
+        <int>2</int>
        </void>
       </object>
      </void>
@@ -110,33 +119,33 @@
    <void method="add">
     <object class="dominio.Equipe" id="Equipe3">
      <void property="nome">
-      <string>Atlético-MG</string>
+      <string>Botafogo</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
        <void property="aproveitamento">
-        <double>16.666666666666664</double>
+        <double>26.666666666666668</double>
        </void>
        <void property="d">
-        <int>1</int>
+        <int>3</int>
        </void>
        <void property="e">
         <int>1</int>
        </void>
        <void property="gc">
-        <int>2</int>
+        <int>8</int>
        </void>
        <void property="gp">
-        <int>1</int>
+        <int>8</int>
        </void>
        <void property="j">
-        <int>2</int>
+        <int>5</int>
        </void>
        <void property="pg">
-        <int>1</int>
+        <int>4</int>
        </void>
-       <void property="sg">
-        <int>-1</int>
+       <void property="v">
+        <int>1</int>
        </void>
       </object>
      </void>
@@ -145,33 +154,33 @@
    <void method="add">
     <object class="dominio.Equipe" id="Equipe4">
      <void property="nome">
-      <string>Internacional</string>
+      <string>Chapecoense</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
        <void property="aproveitamento">
-        <double>66.66666666666666</double>
+        <double>13.333333333333334</double>
+       </void>
+       <void property="d">
+        <int>3</int>
        </void>
        <void property="e">
-        <int>1</int>
+        <int>2</int>
        </void>
        <void property="gc">
-        <int>2</int>
+        <int>6</int>
        </void>
        <void property="gp">
         <int>3</int>
        </void>
        <void property="j">
-        <int>2</int>
+        <int>5</int>
        </void>
        <void property="pg">
-        <int>4</int>
+        <int>2</int>
        </void>
        <void property="sg">
-        <int>1</int>
-       </void>
-       <void property="v">
-        <int>1</int>
+        <int>-3</int>
        </void>
       </object>
      </void>
@@ -180,30 +189,36 @@
    <void method="add">
     <object class="dominio.Equipe" id="Equipe5">
      <void property="nome">
-      <string>Grêmio</string>
+      <string>Corinthians</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
        <void property="aproveitamento">
-        <double>50.0</double>
+        <double>53.333333333333336</double>
        </void>
        <void property="d">
         <int>1</int>
+       </void>
+       <void property="e">
+        <int>2</int>
        </void>
        <void property="gc">
         <int>2</int>
        </void>
        <void property="gp">
-        <int>2</int>
+        <int>4</int>
        </void>
        <void property="j">
-        <int>2</int>
+        <int>5</int>
        </void>
        <void property="pg">
-        <int>3</int>
+        <int>8</int>
+       </void>
+       <void property="sg">
+        <int>2</int>
        </void>
        <void property="v">
-        <int>1</int>
+        <int>2</int>
        </void>
       </object>
      </void>
@@ -212,120 +227,30 @@
    <void method="add">
     <object class="dominio.Equipe" id="Equipe6">
      <void property="nome">
-      <string>Fluminense</string>
+      <string>Coritiba</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
        <void property="aproveitamento">
-        <double>100.0</double>
-       </void>
-       <void property="gp">
-        <int>4</int>
-       </void>
-       <void property="j">
-        <int>2</int>
-       </void>
-       <void property="pg">
-        <int>6</int>
-       </void>
-       <void property="sg">
-        <int>4</int>
-       </void>
-       <void property="v">
-        <int>2</int>
-       </void>
-      </object>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="dominio.Equipe" id="Equipe7">
-     <void property="nome">
-      <string>Santos</string>
-     </void>
-     <void property="performance">
-      <object class="dominio.Performance">
-       <void property="aproveitamento">
-        <double>33.33333333333333</double>
-       </void>
-       <void property="e">
-        <int>2</int>
-       </void>
-       <void property="gc">
-        <int>1</int>
-       </void>
-       <void property="gp">
-        <int>1</int>
-       </void>
-       <void property="j">
-        <int>2</int>
-       </void>
-       <void property="pg">
-        <int>2</int>
-       </void>
-      </object>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="dominio.Equipe" id="Equipe8">
-     <void property="nome">
-      <string>Atlético-PR</string>
-     </void>
-     <void property="performance">
-      <object class="dominio.Performance">
-       <void property="aproveitamento">
-        <double>66.66666666666666</double>
-       </void>
-       <void property="e">
-        <int>1</int>
-       </void>
-       <void property="gc">
-        <int>2</int>
-       </void>
-       <void property="gp">
-        <int>3</int>
-       </void>
-       <void property="j">
-        <int>2</int>
-       </void>
-       <void property="pg">
-        <int>4</int>
-       </void>
-       <void property="sg">
-        <int>1</int>
-       </void>
-       <void property="v">
-        <int>1</int>
-       </void>
-      </object>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="dominio.Equipe" id="Equipe9">
-     <void property="nome">
-      <string>Flamengo</string>
-     </void>
-     <void property="performance">
-      <object class="dominio.Performance">
-       <void property="aproveitamento">
-        <double>16.666666666666664</double>
+        <double>20.0</double>
        </void>
        <void property="d">
-        <int>1</int>
+        <int>2</int>
        </void>
        <void property="e">
-        <int>1</int>
+        <int>3</int>
        </void>
        <void property="gc">
-        <int>2</int>
+        <int>6</int>
+       </void>
+       <void property="gp">
+        <int>4</int>
        </void>
        <void property="j">
-        <int>2</int>
+        <int>5</int>
        </void>
        <void property="pg">
-        <int>1</int>
+        <int>3</int>
        </void>
        <void property="sg">
         <int>-2</int>
@@ -335,32 +260,146 @@
     </object>
    </void>
    <void method="add">
-    <object class="dominio.Equipe" id="Equipe10">
+    <object class="dominio.Equipe" id="Equipe7">
      <void property="nome">
-      <string>Sport</string>
+      <string>Criciúma</string>
+     </void>
+     <void property="performance">
+      <object class="dominio.Performance">
+       <void property="aproveitamento">
+        <double>26.666666666666668</double>
+       </void>
+       <void property="d">
+        <int>3</int>
+       </void>
+       <void property="e">
+        <int>1</int>
+       </void>
+       <void property="gc">
+        <int>9</int>
+       </void>
+       <void property="gp">
+        <int>2</int>
+       </void>
+       <void property="j">
+        <int>5</int>
+       </void>
+       <void property="pg">
+        <int>4</int>
+       </void>
+       <void property="sg">
+        <int>-7</int>
+       </void>
+       <void property="v">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="dominio.Equipe" id="Equipe8">
+     <void property="nome">
+      <string>Cruzeiro</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
        <void property="aproveitamento">
         <double>66.66666666666666</double>
        </void>
+       <void property="d">
+        <int>1</int>
+       </void>
        <void property="e">
         <int>1</int>
        </void>
        <void property="gc">
-        <int>2</int>
+        <int>8</int>
        </void>
        <void property="gp">
-        <int>3</int>
+        <int>10</int>
        </void>
        <void property="j">
+        <int>5</int>
+       </void>
+       <void property="pg">
+        <int>10</int>
+       </void>
+       <void property="sg">
         <int>2</int>
+       </void>
+       <void property="v">
+        <int>3</int>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="dominio.Equipe" id="Equipe9">
+     <void property="nome">
+      <string>Figueirense</string>
+     </void>
+     <void property="performance">
+      <object class="dominio.Performance">
+       <void property="aproveitamento">
+        <double>20.0</double>
+       </void>
+       <void property="d">
+        <int>4</int>
+       </void>
+       <void property="gc">
+        <int>8</int>
+       </void>
+       <void property="gp">
+        <int>1</int>
+       </void>
+       <void property="j">
+        <int>5</int>
+       </void>
+       <void property="pg">
+        <int>3</int>
+       </void>
+       <void property="sg">
+        <int>-7</int>
+       </void>
+       <void property="v">
+        <int>1</int>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="dominio.Equipe" id="Equipe10">
+     <void property="nome">
+      <string>Flamengo</string>
+     </void>
+     <void property="performance">
+      <object class="dominio.Performance">
+       <void property="aproveitamento">
+        <double>26.666666666666668</double>
+       </void>
+       <void property="d">
+        <int>3</int>
+       </void>
+       <void property="e">
+        <int>1</int>
+       </void>
+       <void property="gc">
+        <int>8</int>
+       </void>
+       <void property="gp">
+        <int>4</int>
+       </void>
+       <void property="j">
+        <int>5</int>
        </void>
        <void property="pg">
         <int>4</int>
        </void>
        <void property="sg">
-        <int>1</int>
+        <int>-4</int>
        </void>
        <void property="v">
         <int>1</int>
@@ -372,30 +411,33 @@
    <void method="add">
     <object class="dominio.Equipe" id="Equipe11">
      <void property="nome">
-      <string>Goiás</string>
+      <string>Fluminense</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
        <void property="aproveitamento">
-        <double>66.66666666666666</double>
+        <double>60.0</double>
        </void>
-       <void property="e">
-        <int>1</int>
-       </void>
-       <void property="gp">
-        <int>1</int>
-       </void>
-       <void property="j">
+       <void property="d">
         <int>2</int>
        </void>
+       <void property="gc">
+        <int>3</int>
+       </void>
+       <void property="gp">
+        <int>7</int>
+       </void>
+       <void property="j">
+        <int>5</int>
+       </void>
        <void property="pg">
-        <int>4</int>
+        <int>9</int>
        </void>
        <void property="sg">
-        <int>1</int>
+        <int>4</int>
        </void>
        <void property="v">
-        <int>1</int>
+        <int>3</int>
        </void>
       </object>
      </void>
@@ -404,21 +446,36 @@
    <void method="add">
     <object class="dominio.Equipe" id="Equipe12">
      <void property="nome">
-      <string>Figueirense</string>
+      <string>Goiás</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
+       <void property="aproveitamento">
+        <double>66.66666666666666</double>
+       </void>
        <void property="d">
-        <int>2</int>
+        <int>1</int>
+       </void>
+       <void property="e">
+        <int>1</int>
        </void>
        <void property="gc">
-        <int>5</int>
-       </void>
-       <void property="j">
         <int>2</int>
        </void>
+       <void property="gp">
+        <int>4</int>
+       </void>
+       <void property="j">
+        <int>5</int>
+       </void>
+       <void property="pg">
+        <int>10</int>
+       </void>
        <void property="sg">
-        <int>-5</int>
+        <int>2</int>
+       </void>
+       <void property="v">
+        <int>3</int>
        </void>
       </object>
      </void>
@@ -427,30 +484,36 @@
    <void method="add">
     <object class="dominio.Equipe" id="Equipe13">
      <void property="nome">
-      <string>Palmeiras</string>
+      <string>Grêmio</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
        <void property="aproveitamento">
-        <double>50.0</double>
+        <double>66.66666666666666</double>
        </void>
        <void property="d">
         <int>1</int>
        </void>
+       <void property="e">
+        <int>1</int>
+       </void>
        <void property="gc">
-        <int>2</int>
-       </void>
-       <void property="gp">
-        <int>2</int>
-       </void>
-       <void property="j">
-        <int>2</int>
-       </void>
-       <void property="pg">
         <int>3</int>
        </void>
+       <void property="gp">
+        <int>5</int>
+       </void>
+       <void property="j">
+        <int>5</int>
+       </void>
+       <void property="pg">
+        <int>10</int>
+       </void>
+       <void property="sg">
+        <int>2</int>
+       </void>
        <void property="v">
-        <int>1</int>
+        <int>3</int>
        </void>
       </object>
      </void>
@@ -459,33 +522,33 @@
    <void method="add">
     <object class="dominio.Equipe" id="Equipe14">
      <void property="nome">
-      <string>Chapecoense</string>
+      <string>Internacional</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
        <void property="aproveitamento">
-        <double>16.666666666666664</double>
-       </void>
-       <void property="d">
-        <int>1</int>
+        <double>73.33333333333333</double>
        </void>
        <void property="e">
-        <int>1</int>
+        <int>2</int>
        </void>
        <void property="gc">
-        <int>2</int>
+        <int>4</int>
        </void>
        <void property="gp">
-        <int>1</int>
+        <int>7</int>
        </void>
        <void property="j">
-        <int>2</int>
+        <int>5</int>
        </void>
        <void property="pg">
-        <int>1</int>
+        <int>11</int>
        </void>
        <void property="sg">
-        <int>-1</int>
+        <int>3</int>
+       </void>
+       <void property="v">
+        <int>3</int>
        </void>
       </object>
      </void>
@@ -494,33 +557,33 @@
    <void method="add">
     <object class="dominio.Equipe" id="Equipe15">
      <void property="nome">
-      <string>Vitória</string>
+      <string>Palmeiras</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
        <void property="aproveitamento">
-        <double>16.666666666666664</double>
+        <double>60.0</double>
        </void>
        <void property="d">
-        <int>1</int>
-       </void>
-       <void property="e">
-        <int>1</int>
+        <int>2</int>
        </void>
        <void property="gc">
-        <int>3</int>
+        <int>6</int>
        </void>
        <void property="gp">
-        <int>2</int>
+        <int>7</int>
        </void>
        <void property="j">
-        <int>2</int>
+        <int>5</int>
        </void>
        <void property="pg">
-        <int>1</int>
+        <int>9</int>
        </void>
        <void property="sg">
-        <int>-1</int>
+        <int>1</int>
+       </void>
+       <void property="v">
+        <int>3</int>
        </void>
       </object>
      </void>
@@ -529,50 +592,30 @@
    <void method="add">
     <object class="dominio.Equipe" id="Equipe16">
      <void property="nome">
-      <string>Coritiba</string>
+      <string>Santos</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
        <void property="aproveitamento">
-        <double>33.33333333333333</double>
-       </void>
-       <void property="e">
-        <int>2</int>
-       </void>
-       <void property="j">
-        <int>2</int>
-       </void>
-       <void property="pg">
-        <int>2</int>
-       </void>
-      </object>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="dominio.Equipe" id="Equipe17">
-     <void property="nome">
-      <string>Bahia</string>
-     </void>
-     <void property="performance">
-      <object class="dominio.Performance">
-       <void property="aproveitamento">
-        <double>50.0</double>
+        <double>40.0</double>
        </void>
        <void property="d">
         <int>1</int>
        </void>
+       <void property="e">
+        <int>3</int>
+       </void>
        <void property="gc">
-        <int>2</int>
+        <int>3</int>
        </void>
        <void property="gp">
-        <int>3</int>
+        <int>4</int>
        </void>
        <void property="j">
-        <int>2</int>
+        <int>5</int>
        </void>
        <void property="pg">
-        <int>3</int>
+        <int>6</int>
        </void>
        <void property="sg">
         <int>1</int>
@@ -585,14 +628,49 @@
     </object>
    </void>
    <void method="add">
-    <object class="dominio.Equipe" id="Equipe18">
+    <object class="dominio.Equipe" id="Equipe17">
      <void property="nome">
-      <string>Botafogo</string>
+      <string>São Paulo</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
        <void property="aproveitamento">
-        <double>16.666666666666664</double>
+        <double>60.0</double>
+       </void>
+       <void property="e">
+        <int>3</int>
+       </void>
+       <void property="gc">
+        <int>4</int>
+       </void>
+       <void property="gp">
+        <int>9</int>
+       </void>
+       <void property="j">
+        <int>5</int>
+       </void>
+       <void property="pg">
+        <int>9</int>
+       </void>
+       <void property="sg">
+        <int>5</int>
+       </void>
+       <void property="v">
+        <int>2</int>
+       </void>
+      </object>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="dominio.Equipe" id="Equipe18">
+     <void property="nome">
+      <string>Sport</string>
+     </void>
+     <void property="performance">
+      <object class="dominio.Performance">
+       <void property="aproveitamento">
+        <double>66.66666666666666</double>
        </void>
        <void property="d">
         <int>1</int>
@@ -601,19 +679,22 @@
         <int>1</int>
        </void>
        <void property="gc">
-        <int>5</int>
+        <int>4</int>
        </void>
        <void property="gp">
-        <int>2</int>
+        <int>6</int>
        </void>
        <void property="j">
-        <int>2</int>
+        <int>5</int>
        </void>
        <void property="pg">
-        <int>1</int>
+        <int>10</int>
        </void>
        <void property="sg">
-        <int>-3</int>
+        <int>2</int>
+       </void>
+       <void property="v">
+        <int>3</int>
        </void>
       </object>
      </void>
@@ -622,24 +703,36 @@
    <void method="add">
     <object class="dominio.Equipe" id="Equipe19">
      <void property="nome">
-      <string>Criciúma</string>
+      <string>Vitória</string>
      </void>
      <void property="performance">
       <object class="dominio.Performance">
+       <void property="aproveitamento">
+        <double>33.33333333333333</double>
+       </void>
        <void property="d">
         <int>2</int>
        </void>
-       <void property="gc">
-        <int>3</int>
-       </void>
-       <void property="gp">
-        <int>1</int>
-       </void>
-       <void property="j">
+       <void property="e">
         <int>2</int>
        </void>
+       <void property="gc">
+        <int>6</int>
+       </void>
+       <void property="gp">
+        <int>5</int>
+       </void>
+       <void property="j">
+        <int>5</int>
+       </void>
+       <void property="pg">
+        <int>5</int>
+       </void>
        <void property="sg">
-        <int>-2</int>
+        <int>-1</int>
+       </void>
+       <void property="v">
+        <int>1</int>
        </void>
       </object>
      </void>
@@ -657,26 +750,13 @@
          <void method="add">
           <object class="dominio.Jogo">
            <void property="equipeMandante">
-            <object idref="Equipe6"/>
+            <object idref="Equipe11"/>
            </void>
            <void property="equipeVisitante">
-            <object idref="Equipe12"/>
+            <object idref="Equipe9"/>
            </void>
            <void property="scoreMandante">
             <int>3</int>
-           </void>
-          </object>
-         </void>
-         <void method="add">
-          <object class="dominio.Jogo">
-           <void property="equipeMandante">
-            <object idref="Equipe4"/>
-           </void>
-           <void property="equipeVisitante">
-            <object idref="Equipe15"/>
-           </void>
-           <void property="scoreMandante">
-            <int>1</int>
            </void>
           </object>
          </void>
@@ -686,30 +766,7 @@
             <object idref="Equipe14"/>
            </void>
            <void property="equipeVisitante">
-            <object idref="Equipe16"/>
-           </void>
-          </object>
-         </void>
-         <void method="add">
-          <object class="dominio.Jogo">
-           <void property="equipeMandante">
-            <object idref="Equipe1"/>
-           </void>
-           <void property="equipeVisitante">
-            <object idref="Equipe18"/>
-           </void>
-           <void property="scoreMandante">
-            <int>3</int>
-           </void>
-          </object>
-         </void>
-         <void method="add">
-          <object class="dominio.Jogo">
-           <void property="equipeMandante">
-            <object idref="Equipe8"/>
-           </void>
-           <void property="equipeVisitante">
-            <object idref="Equipe5"/>
+            <object idref="Equipe19"/>
            </void>
            <void property="scoreMandante">
             <int>1</int>
@@ -719,10 +776,10 @@
          <void method="add">
           <object class="dominio.Jogo">
            <void property="equipeMandante">
-            <object idref="Equipe3"/>
+            <object idref="Equipe4"/>
            </void>
            <void property="equipeVisitante">
-            <object idref="Equipe2"/>
+            <object idref="Equipe6"/>
            </void>
           </object>
          </void>
@@ -732,7 +789,43 @@
             <object idref="Equipe17"/>
            </void>
            <void property="equipeVisitante">
+            <object idref="Equipe3"/>
+           </void>
+           <void property="scoreMandante">
+            <int>3</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe1"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe13"/>
+           </void>
+           <void property="scoreMandante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
             <object idref="Equipe0"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe5"/>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe2"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe8"/>
            </void>
            <void property="scoreMandante">
             <int>1</int>
@@ -745,20 +838,20 @@
          <void method="add">
           <object class="dominio.Jogo">
            <void property="equipeMandante">
-            <object idref="Equipe9"/>
+            <object idref="Equipe10"/>
            </void>
            <void property="equipeVisitante">
-            <object idref="Equipe11"/>
+            <object idref="Equipe12"/>
            </void>
           </object>
          </void>
          <void method="add">
           <object class="dominio.Jogo">
            <void property="equipeMandante">
-            <object idref="Equipe7"/>
+            <object idref="Equipe16"/>
            </void>
            <void property="equipeVisitante">
-            <object idref="Equipe10"/>
+            <object idref="Equipe18"/>
            </void>
            <void property="scoreMandante">
             <int>1</int>
@@ -771,10 +864,10 @@
          <void method="add">
           <object class="dominio.Jogo">
            <void property="equipeMandante">
-            <object idref="Equipe19"/>
+            <object idref="Equipe7"/>
            </void>
            <void property="equipeVisitante">
-            <object idref="Equipe13"/>
+            <object idref="Equipe15"/>
            </void>
            <void property="scoreMandante">
             <int>1</int>
@@ -797,23 +890,84 @@
          <void method="add">
           <object class="dominio.Jogo">
            <void property="equipeMandante">
-            <object idref="Equipe16"/>
+            <object idref="Equipe6"/>
            </void>
            <void property="equipeVisitante">
-            <object idref="Equipe7"/>
+            <object idref="Equipe16"/>
            </void>
           </object>
          </void>
          <void method="add">
           <object class="dominio.Jogo">
            <void property="equipeMandante">
-            <object idref="Equipe13"/>
+            <object idref="Equipe15"/>
            </void>
            <void property="equipeVisitante">
-            <object idref="Equipe6"/>
+            <object idref="Equipe11"/>
            </void>
            <void property="scoreVisitante">
             <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe3"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe14"/>
+           </void>
+           <void property="scoreMandante">
+            <int>2</int>
+           </void>
+           <void property="scoreVisitante">
+            <int>2</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe5"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe10"/>
+           </void>
+           <void property="scoreMandante">
+            <int>2</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe8"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe17"/>
+           </void>
+           <void property="scoreMandante">
+            <int>1</int>
+           </void>
+           <void property="scoreVisitante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe19"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe1"/>
+           </void>
+           <void property="scoreMandante">
+            <int>2</int>
+           </void>
+           <void property="scoreVisitante">
+            <int>2</int>
            </void>
           </object>
          </void>
@@ -829,63 +983,18 @@
             <int>2</int>
            </void>
            <void property="scoreVisitante">
-            <int>2</int>
+            <int>1</int>
            </void>
           </object>
          </void>
          <void method="add">
           <object class="dominio.Jogo">
            <void property="equipeMandante">
-            <object idref="Equipe2"/>
+            <object idref="Equipe13"/>
            </void>
            <void property="equipeVisitante">
-            <object idref="Equipe9"/>
-           </void>
-           <void property="scoreMandante">
-            <int>2</int>
-           </void>
-          </object>
-         </void>
-         <void method="add">
-          <object class="dominio.Jogo">
-           <void property="equipeMandante">
             <object idref="Equipe0"/>
            </void>
-           <void property="equipeVisitante">
-            <object idref="Equipe1"/>
-           </void>
-           <void property="scoreMandante">
-            <int>1</int>
-           </void>
-           <void property="scoreVisitante">
-            <int>1</int>
-           </void>
-          </object>
-         </void>
-         <void method="add">
-          <object class="dominio.Jogo">
-           <void property="equipeMandante">
-            <object idref="Equipe15"/>
-           </void>
-           <void property="equipeVisitante">
-            <object idref="Equipe8"/>
-           </void>
-           <void property="scoreMandante">
-            <int>2</int>
-           </void>
-           <void property="scoreVisitante">
-            <int>2</int>
-           </void>
-          </object>
-         </void>
-         <void method="add">
-          <object class="dominio.Jogo">
-           <void property="equipeMandante">
-            <object idref="Equipe10"/>
-           </void>
-           <void property="equipeVisitante">
-            <object idref="Equipe14"/>
-           </void>
            <void property="scoreMandante">
             <int>2</int>
            </void>
@@ -897,16 +1006,13 @@
          <void method="add">
           <object class="dominio.Jogo">
            <void property="equipeMandante">
-            <object idref="Equipe5"/>
+            <object idref="Equipe9"/>
            </void>
            <void property="equipeVisitante">
-            <object idref="Equipe3"/>
-           </void>
-           <void property="scoreMandante">
-            <int>2</int>
+            <object idref="Equipe2"/>
            </void>
            <void property="scoreVisitante">
-            <int>1</int>
+            <int>2</int>
            </void>
           </object>
          </void>
@@ -916,10 +1022,62 @@
             <object idref="Equipe12"/>
            </void>
            <void property="equipeVisitante">
+            <object idref="Equipe7"/>
+           </void>
+           <void property="scoreMandante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+        </void>
+        <void property="numero">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+      <void method="put">
+       <int>3</int>
+       <object class="dominio.Rodada" id="Rodada2">
+        <void property="jogos">
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
             <object idref="Equipe17"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe6"/>
+           </void>
+           <void property="scoreMandante">
+            <int>2</int>
            </void>
            <void property="scoreVisitante">
             <int>2</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe16"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe13"/>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe1"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe8"/>
+           </void>
+           <void property="scoreMandante">
+            <int>2</int>
+           </void>
+           <void property="scoreVisitante">
+            <int>3</int>
            </void>
           </object>
          </void>
@@ -934,11 +1092,399 @@
            <void property="scoreMandante">
             <int>1</int>
            </void>
+           <void property="scoreVisitante">
+            <int>2</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe10"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe15"/>
+           </void>
+           <void property="scoreMandante">
+            <int>4</int>
+           </void>
+           <void property="scoreVisitante">
+            <int>2</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe2"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe3"/>
+           </void>
+           <void property="scoreMandante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe14"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe18"/>
+           </void>
+           <void property="scoreMandante">
+            <int>2</int>
+           </void>
+           <void property="scoreVisitante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe7"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe9"/>
+           </void>
+           <void property="scoreMandante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe0"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe12"/>
+           </void>
+           <void property="scoreVisitante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe4"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe5"/>
+           </void>
+           <void property="scoreVisitante">
+            <int>1</int>
+           </void>
           </object>
          </void>
         </void>
         <void property="numero">
-         <int>2</int>
+         <int>3</int>
+        </void>
+       </object>
+      </void>
+      <void method="put">
+       <int>4</int>
+       <object class="dominio.Rodada" id="Rodada3">
+        <void property="jogos">
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe15"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe12"/>
+           </void>
+           <void property="scoreMandante">
+            <int>2</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe14"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe1"/>
+           </void>
+           <void property="scoreMandante">
+            <int>2</int>
+           </void>
+           <void property="scoreVisitante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe3"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe7"/>
+           </void>
+           <void property="scoreMandante">
+            <int>6</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe11"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe10"/>
+           </void>
+           <void property="scoreMandante">
+            <int>2</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe17"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe5"/>
+           </void>
+           <void property="scoreMandante">
+            <int>1</int>
+           </void>
+           <void property="scoreVisitante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe0"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe8"/>
+           </void>
+           <void property="scoreMandante">
+            <int>2</int>
+           </void>
+           <void property="scoreVisitante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe4"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe13"/>
+           </void>
+           <void property="scoreMandante">
+            <int>1</int>
+           </void>
+           <void property="scoreVisitante">
+            <int>2</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe6"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe18"/>
+           </void>
+           <void property="scoreVisitante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe2"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe19"/>
+           </void>
+           <void property="scoreMandante">
+            <int>1</int>
+           </void>
+           <void property="scoreVisitante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe9"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe16"/>
+           </void>
+           <void property="scoreVisitante">
+            <int>2</int>
+           </void>
+          </object>
+         </void>
+        </void>
+        <void property="numero">
+         <int>4</int>
+        </void>
+       </object>
+      </void>
+      <void method="put">
+       <int>5</int>
+       <object class="dominio.Rodada" id="Rodada4">
+        <void property="jogos">
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe12"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe3"/>
+           </void>
+           <void property="scoreMandante">
+            <int>2</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe8"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe6"/>
+           </void>
+           <void property="scoreMandante">
+            <int>3</int>
+           </void>
+           <void property="scoreVisitante">
+            <int>2</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe10"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe17"/>
+           </void>
+           <void property="scoreVisitante">
+            <int>2</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe5"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe9"/>
+           </void>
+           <void property="scoreVisitante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe1"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe4"/>
+           </void>
+           <void property="scoreMandante">
+            <int>1</int>
+           </void>
+           <void property="scoreVisitante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe13"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe11"/>
+           </void>
+           <void property="scoreMandante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe16"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe0"/>
+           </void>
+           <void property="scoreMandante">
+            <int>1</int>
+           </void>
+           <void property="scoreVisitante">
+            <int>2</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe19"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe15"/>
+           </void>
+           <void property="scoreVisitante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe7"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe14"/>
+           </void>
+          </object>
+         </void>
+         <void method="add">
+          <object class="dominio.Jogo">
+           <void property="equipeMandante">
+            <object idref="Equipe18"/>
+           </void>
+           <void property="equipeVisitante">
+            <object idref="Equipe2"/>
+           </void>
+           <void property="scoreMandante">
+            <int>1</int>
+           </void>
+          </object>
+         </void>
+        </void>
+        <void property="numero">
+         <int>5</int>
         </void>
        </object>
       </void>

@@ -6,6 +6,7 @@
 package gui;
 
 import DAO.DAOCampeonato;
+import dominio.Rodada;
 import java.io.*;
 import java.util.List;
 import java.util.logging.Level;
@@ -27,6 +28,8 @@ public class FormTabelas extends javax.swing.JFrame {
     ServicoImportacaoEquipes importacaoEquipes;
     ServicoImportacaoResultados importacaoResultados;
     List<String[]> classificacaoGeral;
+    
+    
     /**
      * Creates new form Tabelas
      */
@@ -56,6 +59,8 @@ public class FormTabelas extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) this.tabelaGeral.getModel();
         model.setRowCount(0);
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -106,6 +111,8 @@ public class FormTabelas extends javax.swing.JFrame {
         txtScoreJogo10 = new javax.swing.JLabel();
         txtVisitanteJogo10 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -139,17 +146,6 @@ public class FormTabelas extends javax.swing.JFrame {
         jScrollPane3.setViewportView(tabelaGeral);
         if (tabelaGeral.getColumnModel().getColumnCount() > 0) {
             tabelaGeral.getColumnModel().getColumn(0).setResizable(false);
-            tabelaGeral.getColumnModel().getColumn(1).setResizable(false);
-            tabelaGeral.getColumnModel().getColumn(2).setResizable(false);
-            tabelaGeral.getColumnModel().getColumn(3).setResizable(false);
-            tabelaGeral.getColumnModel().getColumn(4).setResizable(false);
-            tabelaGeral.getColumnModel().getColumn(5).setResizable(false);
-            tabelaGeral.getColumnModel().getColumn(6).setResizable(false);
-            tabelaGeral.getColumnModel().getColumn(7).setResizable(false);
-            tabelaGeral.getColumnModel().getColumn(8).setResizable(false);
-            tabelaGeral.getColumnModel().getColumn(9).setResizable(false);
-            tabelaGeral.getColumnModel().getColumn(10).setResizable(false);
-            tabelaGeral.getColumnModel().getColumn(11).setResizable(false);
         }
 
         jTabbedPane1.addTab("Classificação geral", jScrollPane3);
@@ -354,10 +350,14 @@ public class FormTabelas extends javax.swing.JFrame {
                         .addComponent(txtMandanteJogo5)
                         .addComponent(txtScoreJogo5)
                         .addComponent(txtVisitanteJogo5)))
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Rodadas", jPanel2);
+
+        jLabel4.setText("Rodada:");
+
+        jLabel5.setText("0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -373,8 +373,15 @@ public class FormTabelas extends javax.swing.JFrame {
                             .addComponent(jLabel1)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(botaoImportar)
-                        .addGap(186, 186, 186)
-                        .addComponent(jLabel3)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(186, 186, 186)
+                                .addComponent(jLabel3))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(50, 50, 50)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel5)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -384,22 +391,31 @@ public class FormTabelas extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botaoImportar)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(botaoImportar)
+                        .addComponent(jLabel4)
+                        .addComponent(jLabel5))
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(128, 128, 128))
         );
 
         pack();
@@ -466,6 +482,8 @@ public class FormTabelas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane3;
