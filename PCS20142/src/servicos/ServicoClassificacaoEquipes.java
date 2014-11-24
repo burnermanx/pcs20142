@@ -76,21 +76,37 @@ public class ServicoClassificacaoEquipes {
     public ArrayList<Performance> obterClassificacaoVisitante() {
         return null;
     }
+    
+    public boolean timeLibertadores(String nomeEquipe) {
+        Equipe equipe = campeonato.buscaEquipe(nomeEquipe);
+        if (equipe.getIdentificador() != null)
+            if (equipe.getIdentificador().equals("L"))
+                return true;
+        return false;
+    }
 
     public List<String[]> indicarClassificacao(List<String[]> classificacao) {
         List<String[]> indicados = new ArrayList<>();
         int i=0;
+        int vagasLibertadores = 4;
         for (String[] linha : classificacao) {
             i++;
-            if (i >= 1 && i <= 4) {
+            
+            if (i >= 1 && i <= vagasLibertadores || timeLibertadores(linha[2])) {
                 linha[1] = "L";
             }
             if (i >= 17 && i <= 20) {
                 linha[1] = "R";
+                if (timeLibertadores(linha[2])) {
+                    linha[1] = "R L"; } 
+                 
             }
-            if (i >= 5 && i <= 16) {
+            if (i > vagasLibertadores && i <= 16 && !timeLibertadores(linha[2])) {
                 linha[1] = "";
             }
+            if (timeLibertadores(linha[2]) && (Integer.parseInt(linha[0]) >= 1 && Integer.parseInt(linha[0]) <= 4)) {
+                vagasLibertadores += 1;
+            } 
             linha[0] = String.valueOf(i);
             indicados.add(linha);
         }
