@@ -26,7 +26,7 @@ public class ServicoImportacaoEquipes extends ServicoImportacaoDados {
         return str.substring(0,str.length()-1);
     }
 
-    public void importarEquipes(String file) {
+    public void importarEquipes(File file) throws FileNotFoundException {
         BufferedReader reader = null;
         try {
             try {

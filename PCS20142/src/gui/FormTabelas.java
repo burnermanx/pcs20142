@@ -42,7 +42,8 @@ public class FormTabelas extends javax.swing.JFrame {
         servicoClassificacao = new ServicoClassificacaoEquipes(daoCampeonato.getCampeonato());
         importacaoEquipes = new ServicoImportacaoEquipes(daoCampeonato);
         if (!daoCampeonato.fileExists()) {
-            importacaoEquipes.importarEquipes("Equipes.txt");
+            pedirEquipes();
+            //importacaoEquipes.importarEquipes("Equipes.txt");
         }
         importacaoResultados = new ServicoImportacaoResultados(daoCampeonato);
         servicoJogos = new ServicoListagemJogos(daoCampeonato.getCampeonato());
@@ -62,6 +63,21 @@ public class FormTabelas extends javax.swing.JFrame {
         
         atualizaComboBox();
         
+    }
+    
+    public void pedirEquipes() {
+        JFileChooser chooser = new JFileChooser();
+        chooser.setDialogTitle("Importe o arquivo de equipes");
+        int returnVal = chooser.showOpenDialog(this);
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = chooser.getSelectedFile();
+            try {
+                importacaoEquipes.importarEquipes(file);
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(FormTabelas.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        atualizaClassificacaoGeral();
     }
     
     public void atualizaComboBox() {
