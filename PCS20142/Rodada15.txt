@@ -1,0 +1,11 @@
+RODADA: 15
+Goiás 0x1 Internacional
+Corinthians 1x1 Bahia
+Palmeiras 1x2 São Paulo
+Coritiba 0x1 Flamengo
+Cruzeiro 3x0 Santos
+Vitória 0x0 Chapecoense
+Grêmio 2x0 Criciúma
+Botafogo 2x0 Fluminense
+Sport 1x1 Atlético-PR
+Figueirense 2x2 Atlético-MG

@@ -1,0 +1,11 @@
+RODADA: 14
+Bahia 1x0 Goiás
+Criciúma 0x0 Cruzeiro
+Fluminense 1x1 Coritiba
+Flamengo 1x0 Sport
+Santos 0x1 Corinthians
+Atlético-PR 2x0 Botafogo
+Internacional 2x0 Grêmio
+São Paulo 3x1 Vitória
+Atlético-MG 2x1 Palmeiras
+Chapecoense 0x1 Figueirense

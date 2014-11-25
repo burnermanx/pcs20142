@@ -1,0 +1,11 @@
+RODADA: 6
+Flamengo 1x1 Bahia
+Coritiba 1x1 Internacional
+Cruzeiro 2x0 Sport
+Criciúma 1x0 Chapecoense
+Fluminense 5x2 São Paulo
+Corinthians 1x1 Atlético-PR
+Grêmio 2x1 Botafogo
+Palmeiras 1x0 Figueirense
+Goiás 2x2 Santos
+Vitória 2x3 Atlético-MG

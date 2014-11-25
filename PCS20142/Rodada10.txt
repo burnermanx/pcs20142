@@ -1,0 +1,11 @@
+RODADA: 10
+Sport 1x0 Botafogo
+Coritiba 0x2 Figueirense
+Grêmio 0x0 Goiás
+Flamengo 1x2 Atlético-PR
+Bahia 0x2 São Paulo
+Criciúma 3x2 Fluminense
+Corinthians 2x1 Internacional
+Santos 2x0 Palmeiras
+Cruzeiro 3x1 Vitória
+Chapecoense 1x1 Atlético-MG

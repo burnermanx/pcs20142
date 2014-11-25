@@ -1,0 +1,11 @@
+RODADA: 16
+Sport 2x1 Palmeiras
+Santos 2x0 Atlético-PR
+Figueirense 1x0 Botafogo
+Coritiba 2x0 Vitória
+Bahia 0x0 Criciúma
+Flamengo 2x1 Atlético-MG
+Internacional 0x1 São Paulo
+Chapecoense 1x0 Fluminense
+Corinthians 5x2 Goiás
+Cruzeiro 1x0 Grêmio

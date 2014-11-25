@@ -1,0 +1,11 @@
+RODADA: 18
+Palmeiras 0x1 Internacional
+Cruzeiro 4x2 Chapecoense
+Botafogo 1x0 Santos
+Sport 2x0 Criciúma
+Corinthians 1x1 Fluminense
+Coritiba 0x0 Atlético-MG
+Figueirense 1x1 São Paulo
+Vitória 1x2 Flamengo
+Grêmio 1x0 Bahia
+Goiás 3x1 Atlético-PR

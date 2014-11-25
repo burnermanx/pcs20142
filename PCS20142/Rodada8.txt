@@ -1,0 +1,11 @@
+RODADA: 8
+Sport 0x0 Grêmio
+Palmeiras 0x2 Botafogo
+Criciúma 1x0 Coritiba
+Internacional 2x0 Chapecoense
+Goiás 0x0 Vitória
+Corinthians 1x0 Cruzeiro
+Atlético-PR 2x2 São Paulo
+Atlético-MG 2x0 Fluminense
+Flamengo 1x1 Figueirense
+Bahia 0x2 Santos
