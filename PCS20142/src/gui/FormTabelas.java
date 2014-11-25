@@ -38,6 +38,7 @@ public class FormTabelas extends javax.swing.JFrame {
     /**
      * Creates new form Tabelas
      */
+    
     public FormTabelas() {
         initComponents();
         servicoClassificacao = new ServicoClassificacaoEquipes(daoCampeonato.getCampeonato());
